@@ -1,0 +1,334 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "variables";
+// Local overrides to bootstrap variabels
+@import "node_modules/bootstrap/scss/mixins";
+
+:global {
+  @import "node_modules/bootstrap/scss/reboot";
+  @import "node_modules/bootstrap/scss/type";
+}
+
+@import "node_modules/bootstrap/scss/code";
+
+:global {
+  .pre-scrollable {
+    max-height: $pre-scrollable-max-height;
+    overflow-y: scroll;
+  }
+  @import "node_modules/bootstrap/scss/forms";
+}
+
+:global {
+  @import "node_modules/bootstrap/scss/grid";
+  // stylelint-disable selector-no-qualifying-type
+
+  //
+  // Base styles
+  //
+
+  .btn {
+    display: inline-block;
+    font-weight: $btn-font-weight;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: $btn-border-width solid transparent;
+    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+    @include transition($btn-transition);
+
+    // Share hover and focus styles
+    @include hover-focus {
+      text-decoration: none;
+    }
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: $btn-focus-box-shadow;
+    }
+
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+      opacity: $btn-disabled-opacity;
+      @include box-shadow(none);
+    }
+
+    // Opinionated: add "hand" cursor to non-disabled .btn elements
+    &:not(:disabled):not(.disabled) {
+      cursor: pointer;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+      background-image: none;
+      @include box-shadow($btn-active-box-shadow);
+
+      &:focus {
+        @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+      }
+    }
+  }
+
+  // Future-proof disabling of clicks on `<a>` elements
+  a.btn.disabled,
+  fieldset:disabled a.btn {
+    pointer-events: none;
+  }
+
+  //
+  // Alternate buttons
+  //
+
+  //
+  // Link buttons
+  //
+
+  // Make a button look and behave like a link
+  .btn-link {
+    font-weight: $font-weight-normal;
+    color: $link-color;
+    background-color: transparent;
+
+    @include hover {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    &:focus,
+    &.focus {
+      text-decoration: $link-hover-decoration;
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    &:disabled,
+    &.disabled {
+      color: $btn-link-disabled-color;
+      pointer-events: none;
+    }
+
+    // No need for an active state here
+  }
+
+  //
+  // Button Sizes
+  //
+
+  .btn-lg {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+  }
+
+  .btn-sm {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+  }
+
+  //
+  // Block button
+  //
+
+  .btn-block {
+    display: block;
+    width: 100%;
+
+    // Vertically space out multiple block buttons
+    + .btn-block {
+      margin-top: $btn-block-spacing-y;
+    }
+  }
+
+  // Specificity overrides
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    &.btn-block {
+      width: 100%;
+    }
+  }
+
+}
+
+:global {
+  @import "node_modules/bootstrap/scss/transitions";
+  @import "node_modules/bootstrap/scss/dropdown";
+  @import "node_modules/bootstrap/scss/button-group";
+  @import "node_modules/bootstrap/scss/input-group";
+  @import "node_modules/bootstrap/scss/custom-forms";
+  @import "node_modules/bootstrap/scss/nav";
+  @import "node_modules/bootstrap/scss/navbar";
+  @import "node_modules/bootstrap/scss/breadcrumb";
+  @import "node_modules/bootstrap/scss/pagination";
+  @import "node_modules/bootstrap/scss/badge";
+  @import "node_modules/bootstrap/scss/jumbotron";
+  @import "node_modules/bootstrap/scss/alert";
+  @import "node_modules/bootstrap/scss/progress";
+  @import "node_modules/bootstrap/scss/media";
+  @import "node_modules/bootstrap/scss/list-group";
+  @import "node_modules/bootstrap/scss/close";
+  @import "node_modules/bootstrap/scss/modal";
+  @import "node_modules/bootstrap/scss/tooltip";
+  @import "node_modules/bootstrap/scss/popover";
+  @import "node_modules/bootstrap/scss/carousel";
+  @import "node_modules/bootstrap/scss/utilities";
+}
+
+:global {
+  .table {
+    margin-bottom: 0;
+  }
+  @if $enable-print-styles {
+    @media print {
+      *,
+      *::before,
+      *::after {
+        // Bootstrap specific; comment out `color` and `background`
+        //color: $black !important; // Black prints faster
+        text-shadow: none !important;
+        //background: transparent !important;
+        box-shadow: none !important;
+      }
+
+      a {
+        &:not(.btn) {
+          text-decoration: underline;
+        }
+      }
+
+      // Bootstrap specific; comment the following selector out
+      //a[href]::after {
+      //  content: " (" attr(href) ")";
+      //}
+
+      abbr[title]::after {
+        content: " (" attr(title) ")";
+      }
+
+      // Bootstrap specific; comment the following selector out
+      //
+      // Don't show links that are fragment identifiers,
+      // or use the `javascript:` pseudo protocol
+      //
+
+      //a[href^="#"]::after,
+      //a[href^="javascript:"]::after {
+      // content: "";
+      //}
+
+      pre {
+        white-space: pre-wrap !important;
+      }
+      pre,
+      blockquote {
+        border: $border-width solid $gray-500; // Bootstrap custom code; using `$border-width` instead of 1px
+        page-break-inside: avoid;
+      }
+
+      //
+      // Printing Tables:
+      // http://css-discuss.incutio.com/wiki/Printing_Tables
+      //
+
+      thead {
+        display: table-header-group;
+      }
+
+      tr,
+      img {
+        page-break-inside: avoid;
+      }
+
+      p,
+      h2,
+      h3 {
+        orphans: 3;
+        widows: 3;
+      }
+
+      h2,
+      h3 {
+        page-break-after: avoid;
+      }
+
+      // Bootstrap specific changes start
+
+      body {
+        min-width: $print-body-min-width !important;
+      }
+      .container {
+        min-width: $print-body-min-width !important;
+      }
+
+      // Bootstrap components
+      .navbar {
+        display: none;
+      }
+      .badge {
+        border: $border-width solid $black;
+      }
+
+      .table {
+        border-collapse: collapse !important;
+
+        td,
+        th {
+          background-color: $white !important;
+        }
+      }
+
+      .table-bordered {
+        th,
+        td {
+          border: 1px solid $gray-300 !important;
+        }
+      }
+
+      .table-dark {
+        color: inherit;
+
+        th,
+        td,
+        thead th,
+        tbody + tbody {
+          border-color: $table-border-color;
+        }
+      }
+
+      .table .thead-dark th {
+        color: inherit;
+        border-color: $table-border-color;
+      }
+
+      // Bootstrap specific changes end
+    }
+  }
+
+}
+
+:global {
+  .card {
+    border: 1px solid #f5f5f5;
+    background-color: #fff;
+    padding: 30px 40px 20px;
+  }
+
+  .openSans {
+    @include OpenSans;
+  }
+  .abel {
+    @include Abel;
+  }
+  .montserrat {
+    @include Montserrat;
+  }
+  .modal-custom-dialog {
+    margin-top: 200px !important;
+    max-width: 500px !important;
+    .modal-header {
+      margin: 0 !important;
+    }
+  }
+}

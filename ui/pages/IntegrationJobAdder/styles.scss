@@ -1,0 +1,26 @@
+body {
+  .box {
+    display: flex;
+    align-items: center;
+    margin-bottom: $ver-md;
+    background-color: $white;
+    @include mobile {
+      padding: $ver-sm $gap-sm;
+    }
+    @include desktop {
+      padding: $ver-md $gap-md;
+    }
+  }
+
+  .buttonBox {
+    display: flex;
+  }
+
+  .button {
+    margin-right: $gap-md;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

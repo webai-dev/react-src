@@ -1,0 +1,77 @@
+:export {
+  cropperBorder: 30;
+  backgroundImageWidth: 200; // 700 //580
+  backgroundImageWidthToHeightRatio: 2.2;
+}
+
+$screen-break: 1290px;
+body {
+  .box {
+    @include colBox($screen-break);
+    flex-wrap: wrap;
+  }
+
+  .column {
+    @include col($screen-break);
+
+    &:first-child {
+      width: inherit;
+    }
+  }
+
+
+  .marginBottom {
+    margin-bottom: 20px;
+  }
+
+  .itemsBox {
+    display: flex;
+    align-items: center;
+  }
+
+  .resetButton {
+    margin: 0 $gap-sm 0 0;
+    color: $black;
+    border-color: $gray-500;
+
+    &:focus,
+    &:hover {
+      background-color: transparent;
+      color: $black;
+      border-color: $gray-500;
+    }
+  }
+
+  .submitButtons {
+    justify-content: flex-end;
+    margin-top: 75px;
+    @include mobile($screen-break) {
+      justify-content: flex-start;
+    }
+  }
+
+  .backgroundImage {
+    width: 100%;
+  }
+
+  .dropZone {
+    height: 50px;
+  }
+
+  .inputsBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 15px;
+
+    .input {
+      width: calc(50% - #{$gap-sm});
+      flex: 0 0 auto;
+    }
+  }
+
+  .marginBottom {
+    margin-bottom: $ver-md;
+  }
+}

@@ -1,0 +1,165 @@
+@import "variables";
+
+:global {
+  #app .btn.btn__action-remove {
+    color: $red;
+  }
+  .btn + .btn {
+    margin-left: 10px;
+  }
+  button.btn,
+  a.btn {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    &.btn-lg {
+      padding: 12px 25px;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    border: 1px solid transperant;
+    &.btn-primary {
+      background: $blue;
+      border: 1px solid darken($blue, 5%);
+      &:hover,
+      &.active,
+      &:focus {
+        background: darken($blue, 5%);
+        border: 1px solid darken($blue, 10%);
+      }
+    }
+    &.btn-link {
+      color: $blue;
+    }
+    &.inline {
+      margin-top: 0;
+    }
+    &.soft {
+      background-color: $white;
+      border: 1px solid #eee;
+      color: #666;
+      font-weight: 300;
+    }
+    &.left {
+      float: left;
+    }
+    &.right {
+      float: right;
+    }
+    &.icon-btn {
+      font-size: 34px;
+      color: $blue;
+      background: none;
+      border: 0;
+    }
+    &.transparent {
+      background: none;
+      border: 0;
+      color: $pink;
+    }
+    &.btn-pink {
+      $pinkButton: #e84778;
+      background-color: $pinkButton;
+      color: white;
+      border: 1px solid $pinkButton;
+      &:hover,
+      &.active,
+      &:focus {
+        background-color: darken($pinkButton, 10%);
+        border-color: darken($pinkButton, 10%);
+      }
+    }
+    &.btn-orange {
+      background-color: $orange;
+      color: white;
+      border: 1px solid $orange;
+      &:hover,
+      &.active,
+      &:focus {
+        background-color: darken($orange, 10%);
+        border-color: darken($orange, 10%);
+      }
+    }
+    &.btn-red {
+      $btnRed: lighten($red, 10%);
+      background-color: $btnRed;
+      color: white;
+      border: 1px solid $btnRed;
+      &:hover,
+      &.active,
+      &:focus {
+        background-color: darken($btnRed, 10%);
+        border-color: darken($btnRed, 10%);
+      }
+    }
+    &.btn-aqua {
+      background-color: $aqua;
+      border: 1px solid $aqua;
+      &:hover,
+      &.active,
+      &:focus {
+        background-color: darken($aqua, 10%);
+        border-color: darken($aqua, 10%);
+      }
+    }
+    &.btn-yellow {
+      background-color: $yellow;
+      border: 1px solid $yellow;
+      &:hover,
+      &.active,
+      &:focus {
+        background-color: darken($yellow, 10%);
+        border-color: darken($yellow, 10%);
+      }
+      color: $white;
+    }
+    &.btn-green {
+      background-color: $green;
+      border: 1px solid $green;
+      &:hover,
+      &.active,
+      &:focus {
+        background-color: darken($green, 10%);
+        border-color: darken($green, 10%);
+      }
+      color: $white;
+    }
+    &.btn-blue,
+    &.btn-info {
+      background-color: $blue;
+      border: 1px solid $blue;
+      &:hover,
+      &.active,
+      &:focus {
+        background-color: darken($blue, 10%);
+        border-color: darken($blue, 10%);
+      }
+      color: $white;
+    }
+    &.btn-black {
+      background-color: $black;
+      border: 1px solid $black;
+      &:hover,
+      &.active,
+      &:focus {
+        background-color: darken($black, 10%);
+        border-color: darken($black, 10%);
+      }
+      color: $white;
+    }
+  }
+  .btn__back {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    color: #666;
+    font-weight: 300;
+    &:hover,
+    &.active,
+    &:focus {
+      background-color: #ffffff;
+      border: 1px solid darken(#eee, 20%);
+      color: #666;
+    }
+  }
+}

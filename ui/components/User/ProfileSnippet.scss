@@ -1,0 +1,56 @@
+@import "variables";
+:global {
+  .profile-snippet {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    min-height: 85px;
+    h4 {
+      flex: 100%;
+    }
+    .react-rater-star {
+      display: inline;
+    }
+    .user--name-and-role {
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-left: 10px;
+    }
+    .profile-snippet--company {
+      flex-basis: 100%;
+      color: $gray-500;
+    }
+    .profile-snippet--favourite {
+      margin-top: 3px;
+      margin-left: 5px;
+      color: darken($light-grey, 10%);
+      font-size: 20px;
+      line-height: 24px;
+      cursor: pointer;
+      &:hover {
+        color: $pink;
+      }
+      &.profile-snippet--favourite__is-favourite {
+        color: gold;
+      }
+    }
+    .psa-state {
+      padding: 0 4px;
+      font-size: 14px;
+      border: 1px dotted $grey;
+      border-radius: 5px;
+    }
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.info {
+  color: $gray-500;
+}
+.favorite {
+  margin-left: $gap-xs;
+}

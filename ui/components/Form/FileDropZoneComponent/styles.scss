@@ -1,0 +1,85 @@
+.container {
+  @include inputMargin;
+}
+.box {
+  display: flex;
+  align-items: flex-start;
+}
+.dropZone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $gray-600;
+  text-transform: uppercase;
+  border: $border;
+  cursor: pointer;
+  transition: color $time ease-out, border-color $time ease-out;
+  flex: 0 0 auto;
+  &:hover {
+    color: $black;
+    border-color: $black;
+    box-shadow: inset $box-shadow-small;
+  }
+  input {
+    width: 10px;
+  }
+
+  @include mobile {
+    height: 40px;
+    padding: $gap-sm;
+    font-size: 12px;
+  }
+  @include desktop {
+    height: 50px;
+    padding: $gap-md;
+    font-size: 16px;
+  }
+
+  &::placeholder {
+    color: $gray-600;
+  }
+}
+.dropZoneHideText {
+  color: transparent;
+}
+.dropZoneActive,
+.dropZoneFocused {
+  color: $black;
+  border-color: $black;
+  box-shadow: inset $box-shadow-small;
+}
+.file {
+  margin-left: $gap-md;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+
+  @include mobile {
+    height: 40px;
+    font-size: 16px;
+  }
+  @include desktop {
+    height: 50px;
+    font-size: 18px;
+  }
+}
+.remove,
+.required,
+.error {
+   color: $danger;
+ }
+
+.error {
+  display: block;
+  left: 0;
+  margin-left: $gap-md;
+  font-size: 12px;
+  animation: opaque $time ease-out both;
+}
+
+.required {
+  margin-left: $gap-xs;
+}
+.label {
+  @include inputLabel();
+}

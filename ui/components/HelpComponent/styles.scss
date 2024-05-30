@@ -1,0 +1,130 @@
+.helpText {
+  display: none;
+  @include hint;
+  position: absolute;
+  top: 0;
+  min-width: 220px;
+  transform: translateY(-100%);
+  z-index: 1;
+}
+
+.box {
+  position: relative;
+  outline: none;
+  display: flex;
+  align-items: flex-start;
+
+  svg {
+    transform: translateY(2px);
+  }
+
+  &:focus,
+  &:hover {
+    .helpText {
+      display: block;
+      animation: fromTop $time ease-out;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+.boxWithIcon {
+  padding: 0 $gap-sm;
+}
+
+.iconBox {
+  cursor: pointer;
+  color: $primary;
+}
+
+@keyframes fromTop {
+  0% {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+}
+
+.boxBottom {
+  .helpText {
+    top: 100%;
+    transform: translateY(0);
+  }
+
+  &:focus,
+  &:hover {
+    .helpText {
+      animation: fromBottom $time ease-out;
+    }
+  }
+}
+
+@keyframes fromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.boxRight {
+  .helpText {
+    right: 0;
+  }
+}
+.boxCenter {
+  .helpText {
+    right: 50%;
+    transform: translateY(-100%) translateX(50%);
+  }
+
+  &:focus,
+  &:hover {
+    .helpText {
+      animation: fromTopCenter $time ease-out;
+    }
+  }
+}
+
+
+@keyframes fromTopCenter {
+  0% {
+    transform: translateY(-200%) translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100%) translateX(50%);
+    opacity: 1;
+  }
+}
+
+
+
+.boxCenter.boxBottom {
+  .helpText {
+    transform: translateY(0) translateX(50%);
+  }
+
+  &:focus,
+  &:hover {
+    .helpText {
+      animation: fromBottomCenter $time ease-out;
+    }
+  }
+}
+
+@keyframes fromBottomCenter {
+  0% {
+    transform: translateY(100%) translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) translateX(50%);
+    opacity: 1;
+  }
+}

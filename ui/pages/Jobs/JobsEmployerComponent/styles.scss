@@ -1,0 +1,116 @@
+body {
+  .row {
+    display: flex;
+    align-items: center;
+    margin: $ver-md 0;
+  }
+
+  .rowTop {
+    background-color: $white;
+  }
+
+  .rowRight {
+    justify-content: flex-end;
+    margin-left: $gap-md;
+  }
+
+  .dropDown {
+    min-width: 150px;
+    max-width: 200px;
+    margin-bottom: 0;
+  }
+
+  .middle {
+    flex: 0 1 37%;
+    min-width: 410px;
+    justify-content: flex-end;
+
+    .robButtonActive,
+    .robButton {
+      margin: 0 22px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      padding: 5px 10px;
+      min-height: 26px;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      text-transform: uppercase;
+      @include OpenSans
+    }
+
+    .robButton {
+      border: 1px solid $gray-600;
+    }
+  }
+
+  .end {
+    flex: 0 1 140px;
+  }
+
+  :global {
+    .job--table {
+      width: 100%;
+
+      .job-table--row {
+        .badge {
+          cursor: pointer;
+          @include OpenSans;
+        }
+
+        .job-table--cell--image {
+        }
+
+        .job-table--cell--title {
+          width: 40%;
+        }
+
+        .job-table--cell--count {
+        }
+
+        .job-table--cell--status {
+          min-width: 220px;
+        }
+
+        .job-table--cell--actions {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .no-border {
+      border: none !important;
+    }
+
+    .job-status {
+      @include OpenSans;
+    }
+  }
+
+  .location {
+    color: $gray-500;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .dropDownLabel {
+    @include dropDownButtonLabel
+  }
+
+  .dropDownSelect {
+    @include dropDownSelect
+  }
+
+  .item {
+    @include dropDownItem;
+  }
+}

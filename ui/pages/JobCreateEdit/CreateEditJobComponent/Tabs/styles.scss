@@ -1,0 +1,61 @@
+body {
+  .row {
+    align-items: flex-start;
+  }
+
+  .inputTitle {
+    input {
+      font-size: 22px;
+      text-align: center;
+    }
+  }
+
+  .form {
+    background-color: $white;
+    @include mobile {
+      padding: $ver-md $gap-md;
+    }
+    @include desktop {
+      padding: $ver-md $gap-lg;
+    }
+  }
+
+  .textBox {
+    margin-bottom: $ver-lg;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .searchTypeBox {
+    color: $gray-600;
+    border: 1px solid $gray-600;
+    @include mobile {
+      margin-right: $gap-md;
+    }
+    @include desktop {
+      margin-right: $gap-lg;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 20px;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .searchTypeBoxActive {
+    color: $accent;
+    border: 1px solid $accent;
+  }
+
+  .searchTypeContainer {
+    display: flex;
+  }
+}

@@ -1,0 +1,44 @@
+@import "variables";
+:global {
+  span.job-status {
+    padding: 5px 10px;
+    color: #575f65;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    &.job-status__draft {
+      .fa-circle {
+        color: $orange;
+      }
+    }
+    &.job-status__open {
+      .fa-circle {
+        color: $yellow;
+      }
+    }
+    &.job-status__closed {
+      .fa-circle {
+        color: $red;
+      }
+    }
+    &.job-status__filled {
+      .fa-circle {
+        color: $green;
+      }
+    }
+    &.job-status__engaged {
+      .fa-circle {
+        color: $blue;
+      }
+    }
+  }
+}
+// - draft orange
+// - open yellow
+// - engaged blue
+// - filled green
+// - closed red
+.pointer {
+  cursor: pointer;
+}

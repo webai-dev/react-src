@@ -1,0 +1,214 @@
+.dropDownSelect {
+  max-width: 280px;
+  background-color: $white;
+  box-shadow: $box-shadow;
+  left: 0;
+}
+
+.yearBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.monthBox {
+  display: flex;
+  flex-wrap: wrap;
+
+  .month {
+    @include OpenSans;
+  }
+}
+
+.prevButton,
+.nextButton,
+.month {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color $time ease-out, color $time ease-out;
+  background-color: transparent;
+
+  &:focus,
+  &:hover {
+    color: $white;
+    background-color: $gray-700;
+  }
+}
+
+.prevButton,
+.nextButton {
+  width: 65px;
+  height: 40px;
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.month {
+  flex: 1 0 auto;
+  width: 33%;
+  height: 32px;
+  border-radius: 3px;
+}
+
+.monthActive {
+  color: $white;
+  background-color: $primary;
+}
+
+.buttonDisabled {
+  color: $gray-500 !important;
+  pointer-events: none;
+  background-color: $gray-100 !important;
+}
+
+$line-width: 1px;
+.container {
+  position: relative;
+  width: 100%;
+  @include inputMargin;
+}
+
+.inputBox {
+  display: flex;
+  flex: 1;
+  position: relative;
+  font-size: 16px;
+  border-bottom: $line-width solid transparent;
+  padding: 0;
+
+  .input {
+    border: none !important; // @TODO remove it when no bootstrap
+  }
+}
+
+.activeLine {
+  &::after,
+  &::before {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: $line-width;
+    background-color: $accent;
+    content: '';
+    transition: width ease-out $time;
+  }
+
+  &::after {
+    left: 50%;
+  }
+
+  &::before {
+    right: 50%;
+  }
+}
+
+.label {
+  @include inputLabel();
+}
+
+.required {
+  margin-left: $gap-xs;
+  color: $danger;
+}
+
+.input {
+  flex: 1 1 auto;
+  width: 10px;
+  color: $black;
+  background-color: $gray-100;
+  border: none;
+  outline: none;
+  @include mobile {
+    height: 40px;
+    padding: $gap-sm;
+    font-size: 12px;
+  }
+  @include desktop {
+    height: 50px;
+    padding: $gap-md;
+    font-size: 16px;
+  }
+
+  &::placeholder {
+    color: $gray-600;
+  }
+}
+
+@keyframes opaque {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.error {
+  display: block;
+  left: 0;
+  margin-left: $gap-xs;
+  color: $danger;
+  font-size: 12px;
+  animation: opaque $time ease-out both;
+}
+
+.containerActive {
+  .activeLine {
+    &::after,
+    &::before {
+      width: 50%;
+    }
+  }
+}
+
+.containerLabelActive {
+  // change styles when input is active
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.containerError {
+  .inputBox {
+    transform: translate3d(0, 0, 0);
+    animation: shake $time-long cubic-bezier(.36, .07, .19, .97) both;
+  }
+
+  .input {
+    color: $danger;
+
+    &::placeholder {
+      color: $danger;
+    }
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+

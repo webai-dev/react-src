@@ -1,0 +1,40 @@
+.box {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  //background-color: transparent;
+  //flex-direction: column;
+  //border: none;
+  padding:0;
+  &:focus {
+    outline: none;
+    .label {
+      border-color: $gray-500;
+    }
+  }
+  .label {
+    @include OpenSans;
+  }
+}
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: border $time ease-out;
+}
+.select {
+  z-index: 10;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  max-height: 450px;
+  pointer-events: none;
+  opacity: 0;
+  overflow-y: auto;
+}
+.selectVisible {
+  pointer-events: all;
+  opacity: 1;
+}

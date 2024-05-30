@@ -1,0 +1,70 @@
+body {
+  .dropDown {
+    min-width: 150px;
+    max-width: 200px;
+  }
+
+  .location {
+    color: $gray-500;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .dropDownLabel {
+    @include dropDownButtonLabel
+  }
+
+  .dropDownSelect {
+    @include dropDownSelect
+  }
+
+  .item {
+    @include dropDownItem;
+  }
+
+  .jobInfo {
+    color: $black;
+  }
+
+  .brief {
+    text-align: center;
+  }
+
+  .middle {
+    flex: 0 1 37%;
+    min-width: 410px;
+    justify-content: flex-end;
+
+    .robButtonActive,
+    .robButton {
+      margin: 0 22px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      padding: 5px 10px;
+      min-height: 26px;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      text-transform: uppercase;
+      cursor: default;
+      @include OpenSans
+    }
+
+    .robButton {
+      border: 1px solid $gray-600;
+    }
+  }
+
+  .end {
+    flex: 0 1 140px;
+  }
+}

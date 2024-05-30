@@ -1,0 +1,10 @@
+.fixDisplay {
+  display: inline-flex;
+  opacity: 1;// @TODO remove it when no bootstrap
+  &:active {
+    transform: translateY(1px);
+  }
+  &:focus {
+    outline: none;
+  }
+}

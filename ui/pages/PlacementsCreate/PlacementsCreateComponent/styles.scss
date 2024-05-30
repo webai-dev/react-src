@@ -1,0 +1,37 @@
+body {
+  .form {
+    @include form;
+
+    .title {
+      margin: 30px 0 40px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .row {
+      @include input3Box;
+    }
+
+    .placementInput {
+      @include input3;
+    }
+  }
+
+  .help {
+    @include OpenSans;
+    font-size: 16px;
+    text-transform: none;
+    display: flex;
+    align-items: flex-end;
+    @include desktop {
+      width: 400px;
+    }
+  }
+
+  .helptarget {
+    color: $primary;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+  }
+}

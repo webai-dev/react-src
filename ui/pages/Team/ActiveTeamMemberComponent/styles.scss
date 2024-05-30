@@ -1,0 +1,40 @@
+body {
+  .modal {
+    max-width: 1024px;
+  }
+
+  .box {
+    @include modalInnerApp;
+  }
+
+  .close {
+    @include modalCloseButtonInnerApp;
+  }
+
+  .avatarBox {
+    display: flex;
+    justify-content: center;
+    margin: $ver-lg 0;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: $ver-md 0;
+  }
+
+  .infoBox {
+    margin: 0 $gap-md 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+}

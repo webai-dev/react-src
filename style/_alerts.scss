@@ -1,0 +1,11 @@
+:global {
+  .alert.alert-info {
+    background-color: $blue;
+    border: 1px solid $blue;
+    color: $white;
+    p {
+      color: $white !important;
+    }
+  }
+}
+

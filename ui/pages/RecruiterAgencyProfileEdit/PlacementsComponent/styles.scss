@@ -1,0 +1,6 @@
+.box {
+  @include grayBox;
+}
+.info {
+  margin: $ver-md 0;
+}

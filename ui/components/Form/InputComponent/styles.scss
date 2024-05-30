@@ -1,0 +1,208 @@
+$line-width: 1px;
+.container {
+  position: relative;
+  width: 100%;
+  @include inputMargin;
+}
+
+.inputBox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+  border-bottom: $line-width solid transparent;
+
+  .input {
+    border: none !important; // @TODO remove it when no bootstrap
+  }
+}
+
+.activeLine {
+  &::after,
+  &::before {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: $line-width;
+    background-color: $accent;
+    content: '';
+    transition: width ease-out $time;
+  }
+
+  &::after {
+    left: 50%;
+  }
+
+  &::before {
+    right: 50%;
+  }
+}
+
+.label {
+  @include inputLabel();
+}
+
+.required {
+  @include inputRequired();
+}
+
+.input {
+  flex: 1 1 auto;
+  width: 10px;
+  color: $black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: $gray-100;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  @include mobile {
+    height: 40px;
+    padding: $gap-sm;
+    font-size: 12px;
+  }
+  @include desktop {
+    height: 50px;
+    padding: $gap-md;
+    font-size: 16px;
+  }
+
+  &::placeholder {
+    color: $gray-600;
+  }
+}
+
+.pre,
+.post {
+  display: flex;
+  align-items: center;
+  color: $black;
+  background-color: $gray-100;
+  @include mobile {
+    height: 40px;
+    padding: $gap-sm;
+    font-size: 12px;
+  }
+  @include desktop {
+    height: 50px;
+    padding: $gap-md;
+    font-size: 16px;
+  }
+}
+
+.pre {
+  border-right: 1px solid $gray-500;
+}
+
+.post {
+  border-left: 1px solid $gray-500;
+}
+
+@keyframes opaque {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.error {
+  @include inputError();
+}
+
+.containerActive {
+  .activeLine {
+    &::after,
+    &::before {
+      width: 50%;
+    }
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.containerError {
+  .inputBox {
+    transform: translate3d(0, 0, 0);
+    animation: shake $time-long cubic-bezier(.36, .07, .19, .97) both;
+  }
+
+  .input {
+    color: $danger;
+
+    &::placeholder {
+      color: $danger;
+    }
+  }
+}
+
+.containerBig {
+  .input {
+    text-align: center;
+    @include mobile {
+      height: 50px;
+      font-size: 24px;
+    }
+    @include desktop {
+      height: 60px;
+      font-size: 30px;
+    }
+  }
+
+  .pre,
+  .post {
+    @include mobile {
+      height: 50px;
+      font-size: 24px;
+    }
+    @include desktop {
+      height: 60px;
+      font-size: 30px;
+    }
+  }
+}
+
+.containerSmall {
+  .input {
+    height: 32px;
+    padding: $ver-xs $gap-md;
+    font-size: 16px;
+    border-radius: 3px;
+  }
+
+  .pre,
+  .post {
+    height: 32px;
+    font-size: 16px;
+  }
+
+}
+
+.containerDisabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

@@ -1,0 +1,130 @@
+body {
+  .selectBox {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .box {
+    @include modalInnerApp;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  .close {
+    @include modalCloseButtonInnerApp;
+  }
+
+  .title {
+    @include modalInnerAppTitle;
+  }
+
+  .items {
+    flex: 0 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .item {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .marginTop {
+    margin-top: $ver-xs;
+  }
+
+  .modal {
+    max-width: 1024px;
+    background-color: $gray-100;
+  }
+
+  .modalInner {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .saveBox {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .start {
+    flex: 0 1 40%;
+  }
+
+  .middle {
+    flex: 1 1 55%;
+  }
+
+  .info {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  .required {
+    margin-left: $gap-xs;
+    color: $danger;
+  }
+
+  .filterBox {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .filterHeightSmall {
+    max-height: 100px;
+  }
+
+  .filterSelect {
+    max-width: 280px;
+  }
+
+  .select {
+    max-width: 280px;
+
+    margin-right: $gap-md;
+
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+
+  .placementInfo {
+    margin-right: $gap-md;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .label {
+    color: $gray-600;
+  }
+
+  .jobType {
+    text-transform: capitalize;
+  }
+
+  .placementItem {
+    margin-bottom: $ver-sm;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .noItems {
+    text-align: center;
+
+    .button {
+      transform: none;
+    }
+  }
+}

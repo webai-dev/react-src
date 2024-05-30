@@ -1,0 +1,7 @@
+.button {
+  padding: $ver-sm $gap-sm;
+  color: $black;
+  &:hover {
+    background-color: $gray-200;
+  }
+}

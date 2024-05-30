@@ -1,0 +1,33 @@
+@import "variables";
+:global {
+  .recruiter--table {
+    width: 100%;
+    .no-items-row {
+      span {
+        display: block;
+        color: #666;
+        text-align: center;
+      }
+    }
+    .profile-snippet--name {
+      cursor:pointer;
+    }
+    .recruiter-table--row {
+      transition: all 0.25s linear;
+      &.recruiter-table--row__active {
+        background: rgba($yellow, 0.2);
+      }
+      .recruiter-table--cell--is-selected {
+        width: 63px;
+      }
+      .recruiter-table--cell--recruiter {
+      }
+      .recruiter-table--cell--candidate-count {
+      }
+      .recruiter-table--cell--status {
+      }
+      .recruiter-table--cell--actions {
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: $ver-md $gap-md;
+}
+.button {
+  align-self: flex-start;
+  margin-top: $ver-sm;
+}
+.label {
+  margin-left: 0;
+}
+.buttonBack {
+  width: 100%;
+}

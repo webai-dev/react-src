@@ -1,0 +1,15 @@
+body {
+  background-color: $gray-200;
+
+  .box {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .zoom {
+    transform: scale(2.1806);
+  }
+}

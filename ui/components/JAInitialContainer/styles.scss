@@ -1,0 +1,27 @@
+body {
+  .modal {
+    max-width: 1024px;
+  }
+}
+
+.box {
+  @include modalInnerApp;
+}
+
+.close {
+  @include modalCloseButtonInnerApp;
+}
+
+.title {
+  @include modalInnerAppTitle;
+}
+
+.text {
+  text-align: center;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  margin-top: $ver-md;
+}

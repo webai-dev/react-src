@@ -1,0 +1,38 @@
+.box{
+  margin-top: $ver-lg;
+  display: flex;
+}
+.item {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border: $border;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $accent;
+  transition: border-color $time ease-out, background-color $time ease-out, color $time ease-out;
+  border-radius: 0!important; // @todo remove !important when no bootstrap
+  &:first-child {
+    border-bottom-left-radius: 4px!important;// @todo remove !important when no bootstrap
+    border-top-left-radius: 4px!important;// @todo remove !important when no bootstrap
+  }
+  &:last-child {
+    border-right: $border;
+    border-bottom-right-radius: 4px!important;// @todo remove !important when no bootstrap
+    border-top-right-radius: 4px!important;// @todo remove !important when no bootstrap
+  }
+  &:hover,
+  &:focus {
+    border-color: $accent;
+    background-color: $accent;
+    color: $white;
+  }
+}
+.itemActive {
+  border-color: $accent;
+  background-color: $accent;
+  color: $white;
+  cursor: default;
+}

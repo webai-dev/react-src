@@ -1,0 +1,36 @@
+.notification {
+  padding: $ver-sm $gap-md;
+  background-color: $gray-200;
+  border-bottom: $border;
+  &:last-child {
+    border-bottom: none;
+  }
+  color: $gray-600;
+  &:focus,
+  &:hover {
+    background-color: lighten($accent, 30%);
+    color: $gray-600 !important;
+  }
+  .message {
+    @include OpenSans;
+    word-break: break-word;
+  }
+  .date {
+    @include OpenSans;
+  }
+}
+.notificationSeen {
+  background-color: $white;
+}
+.subject {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: $accent;
+  margin-bottom: $ver-sm;
+  @include Montserrat;
+}
+.date {
+  margin-top: $ver-md;
+  color: $accent;
+  font-size: 10px;
+}

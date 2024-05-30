@@ -1,0 +1,105 @@
+.box {
+  position: relative;
+}
+.labelBox {
+  display: flex;
+  align-items: center;
+  margin: $ver-sm $gap-md $ver-sm 0;
+  opacity: 1!important; // @TODO remove when no bootstrap
+  cursor: pointer;
+  &:focus {
+    opacity: 0.5;
+  }
+}
+.radio {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: $gap-md;
+  background-color: $gray-500;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border $time ease-out;
+}
+.labelBoxActive {
+  .radio {
+    background-color: $accent;
+    &:after {
+      width: 10px;
+      height: 10px;
+      background-color: $white;
+      border-radius: 50%;
+      content: '';
+    }
+  }
+}
+.label {
+  color: $black;
+  font-size: 14px;
+  text-transform: capitalize;
+  @include OpenSans;
+  transition: color $time ease-out;
+}
+
+.input {
+  position: absolute;
+  top: 30%;
+  pointer-events: none;
+  opacity: 0;
+  &:active {
+    & + .labelBox {
+      transform: translateY(1px);
+    }
+  }
+  &:hover,
+  &:focus {
+    & + .labelBox {
+      .label {
+        color: $accent;
+      }
+    }
+  }
+}
+.boxBig {
+  .radio {
+    width: 25px;
+    height: 25px;
+    background-color: $white;
+    border: 5px solid  $gray-500;
+  }
+  .label {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .input {
+    &:hover,
+    &:focus {
+      & + .labelBox {
+        .label {
+          color: $black;
+        }
+        .radio {
+          border-color: $accent;
+        }
+      }
+    }
+  }
+
+  .labelBoxActive {
+    .label {
+      color: $accent;
+    }
+    .radio {
+      border-color: $accent;
+      &:after {
+        width: 11px;
+        height: 11px;
+        background-color: $accent;
+      }
+    }
+  }
+}

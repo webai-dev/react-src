@@ -1,0 +1,36 @@
+body {
+  .box {
+    display: flex;
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  .mainInfoBox {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    @include mobile {
+      align-items: center;
+    }
+    @include desktop {
+      align-items: flex-start;
+      max-width: 30%;
+    }
+  }
+
+  .additionalInfoBox {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    @include desktop {
+      max-width: calc(70% - 30px);
+      margin-left: 30px;
+    }
+  }
+}

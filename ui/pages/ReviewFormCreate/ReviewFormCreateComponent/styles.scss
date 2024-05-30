@@ -1,0 +1,113 @@
+body {
+  .box {
+    font-size: 16px;
+    @include desktop {
+      padding: 0 15%
+    }
+  }
+
+  .title {
+    margin-bottom: $ver-lg;
+  }
+
+  .textCenter {
+    text-align: center;
+  }
+
+  .card {
+    margin: $ver-lg 0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: $box-shadow;
+  }
+
+  .cardInner {
+    display: flex;
+    flex-wrap: wrap;
+    @include OpenSans;
+  }
+
+  .cardInfo {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: $gap-md;
+  }
+
+  .label {
+    color: $gray-500;
+  }
+
+  .selectComponent {
+    background-color: $gray-100;
+    margin: $ver-md 0;
+  }
+
+  .form {
+    @include OpenSans;
+  }
+
+  .submit {
+    @include Abel;
+    min-width: 130px;
+    margin-top: 20px;
+  }
+
+  .semiTitle {
+    margin: $ver-md 0;
+  }
+
+  .mainRatingBox {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .ratingBox {
+    margin: $ver-md 0;
+  }
+
+  .formTitle {
+    textarea {
+      height: 60px;
+      min-height: 0;
+    }
+  }
+
+  .formComment {
+    textarea {
+      resize: vertical !important;
+    }
+  }
+
+  .inputBox {
+    display: flex;
+  }
+
+  .input {
+    flex: 1 1 auto;
+    margin-right: $gap-md;
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .terms {
+    margin-top: $ver-md;
+  }
+
+  .npsBox {
+    margin: $ver-md 0;
+  }
+
+  .nps {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .npsLabel {
+    margin-right: $gap-md;
+  }
+}

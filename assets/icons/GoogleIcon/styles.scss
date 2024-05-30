@@ -1,0 +1,5 @@
+.icon {
+    //width: 15px;
+    //height: 15px;
+    @include icon(15px, true);
+}

@@ -1,0 +1,31 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: $ver-md 0;
+  :global {
+    .card-table  {
+      width: 100%;
+    }
+  }
+}
+.modal {
+  max-width:1124px;
+  max-height: calc(100vh - 60px);
+  transform: translateY(20px);
+}
+.modalInner {
+  padding: 120px 40px 50px 40px;
+}
+.close {
+  @include modalCloseButtonInnerApp;
+}
+.viewButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-100%);
+  &:active {
+    transform: translateY(calc(-100% + 1px));
+  }
+}

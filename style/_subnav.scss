@@ -1,0 +1,57 @@
+
+:global {
+  .sub-nav {
+    border: 1px solid $light-grey;
+    margin-bottom: 20px;
+    ul.main-nav {
+      margin-left: 0;
+      li {
+        a {
+          padding: 17px 18px 15px;
+          display: block;
+          font-family: "Abel", sans-serif;
+          font-weight: 300;
+          color: $black;
+          font-size: 15px;
+          span {
+            font-size: 12px;
+            background-color: $pink;
+            color: #fff;
+            padding: 3px 7px;
+            border-radius: 50px;
+            position: relative;
+            top: -1px;
+            font-weight: 400;
+          }
+          &:hover {
+            background-color: #fff;
+          }
+          &.active {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+    .input-group {
+      input {
+        border: 0;
+        padding: 16px 18px;
+        height: auto;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        font-size: 18px;
+        background-color: $white;
+        border-radius: 0;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+      }
+      button {
+        border: 0;
+        background-color: $white;
+        padding: 15px;
+        font-size: 18px;
+        margin: 0;
+      }
+    }
+  }
+}

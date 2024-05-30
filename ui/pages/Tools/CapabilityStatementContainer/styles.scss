@@ -1,0 +1,111 @@
+$backgroundImageWidthToHeightRatio: 3.8;
+body {
+  .box {
+    @include colBox;
+  }
+
+  .column {
+    @include col;
+
+    &:first-child {
+      padding-right: 90px;
+      @include mobile(1200px) {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .statementItem {
+    display: flex;
+    justify-content: space-between;
+    border-top: $border;
+    padding: 15px 0;
+
+    &:last-child {
+      border-bottom: $border;
+    }
+
+    .statementHeader {
+      @include OpenSans;
+    }
+  }
+
+  .statementInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .date {
+    color: $gray-500;
+    font-size: 13px;
+  }
+
+  .statementHeader {
+    padding: 0;
+    font-size: 20px;
+    word-break: break-word;
+    text-transform: inherit;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    margin-left: $gap-md;
+  }
+
+  .box {
+    .marginBottom {
+      margin-bottom: 15px;
+    }
+  }
+
+  .avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  .itemsBox {
+    display: flex;
+    align-items: center;
+  }
+
+  .flexEnd {
+    justify-content: flex-end;
+  }
+
+  .nodeBox {
+    margin-bottom: 20px;
+  }
+
+  .selectNodes {
+    max-width: 400px;
+  }
+
+  .previewButton {
+    margin: 0 $gap-sm 0 0;
+  }
+
+  $banner-max-width: 280px;
+
+  .backgroundImage {
+    z-index: 1;
+    width: 100%;
+    margin: $ver-md 0;
+    max-width: $banner-max-width;
+    height: #{$banner-max-width/$backgroundImageWidthToHeightRatio};
+  }
+
+  .noMargin {
+    margin: 0;
+  }
+
+  .submitButtons {
+    justify-content: flex-end;
+    margin-top: 75px;
+  }
+
+  .marginRight {
+    margin-right: $gap-sm;
+  }
+}

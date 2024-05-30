@@ -1,0 +1,29 @@
+:export {
+  time: 3000;
+}
+
+.messageBox {
+  position: relative;
+}
+.message {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 245px;
+  padding: $ver-sm $gap-md;
+  background-color: $gray-300;
+  border-radius: 4px;
+  animation: popUp $time;
+}
+
+@keyframes popUp {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

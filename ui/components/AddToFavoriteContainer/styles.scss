@@ -1,0 +1,74 @@
+.box {
+  display: flex;
+  align-items: center;
+  color: $gray-600;
+}
+
+.star {
+  min-height: inherit;
+  padding: 0;
+  color: $gray-600;
+
+  svg {
+    width: 27px;
+    height: 27px;
+    stroke-width: 2px;
+  }
+
+  &:focus {
+    border: 2px solid transparent;
+
+    svg {
+      stroke: $warning;
+    }
+  }
+}
+
+.starActive {
+  svg {
+    stroke: $warning;
+    fill: $warning;
+  }
+}
+
+.text {
+  margin: 0 0 0 $gap-sm;
+  color: $gray-600 !important; // @TODO remove when no bootstrap
+  font-size: 20px;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.bigBox {
+  .star {
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.smallBox {
+  .star {
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+body {
+  .modal {
+    max-width: 450px !important;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 45px;
+}
+
+.submit {
+  margin-top: 10px;
+}

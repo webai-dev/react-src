@@ -1,0 +1,24 @@
+body {
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gap-xs;
+  }
+
+  .rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 20%;
+    padding: 0 $gap-xs;
+    max-width: 110px;
+  }
+
+  .label {
+    margin-top: $ver-xs;
+  }
+
+  .labelCount {
+    color: $gray-500;
+  }
+}

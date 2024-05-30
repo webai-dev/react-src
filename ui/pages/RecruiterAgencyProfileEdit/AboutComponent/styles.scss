@@ -1,0 +1,15 @@
+body {
+  .title {
+    margin: $ver-xl 0 $ver-lg 0 !important;
+  }
+
+  .input {
+    margin: $ver-md 0;
+  }
+
+  .textBox {
+    textarea {
+      min-height: 200px;
+    }
+  }
+}

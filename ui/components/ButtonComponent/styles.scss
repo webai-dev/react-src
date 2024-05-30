@@ -1,0 +1,300 @@
+$size-sm: 30px;
+$size-md: 40px;
+$size-lg: 50px;
+
+
+.button {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: $size-md;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  border:none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: color $time ease-out, transform $time ease-out, background-color $time ease-out, opacity $time ease-out, border $time ease-out;
+  &:active {
+    transform: translateY(1px);
+  }
+  &.buttonDisabled {
+    pointer-events: none;
+  }
+  @include mobile {
+    padding: 0 $gap-sm;
+  }
+  @include desktop {
+    padding: 0 $gap-md;
+  }
+}
+// SIZE
+.big {
+  @include mobile {
+    min-height: 40px;
+    font-size: 16px;
+  }
+  @include desktop {
+    min-height: 48px;
+    font-size: 16px;
+    padding: 0 25px;
+  }
+}
+.small {
+  display: inline-flex;
+  min-height: $size-sm;
+  padding: 0 $gap-sm;
+  font-size: inherit;
+}
+
+// TYPE
+.default {
+  color: $light-dark;
+  background-color: $light;
+  border: 2px solid $light;
+  &:focus {
+    background-color: darken($light, 8);
+    border-color: darken($light, 8);
+  }
+
+  &.buttonDisabled {
+    color: $gray-400;
+    background-color: darken($light, 8);
+  }
+}
+.accent {
+  color: $light;
+  background-color: $accent;
+  border: 2px solid $accent;
+  &:focus {
+    border-color:darken($accent, 25);
+  }
+
+
+  &.buttonDisabled {
+    color: $gray-400;
+    background-color: lighten($accent, 8);
+  }
+  .buttonSmall {
+    border-width: 1px;
+  }
+  &:focus,
+  &:hover {
+    color: $light !important;
+  }
+}
+.underline {
+  color: $black;
+  background-color: transparent;
+  border-bottom: 2px solid $accent;
+  border-radius: 0 !important; // @TODO remove "!important" it when no bootstrap
+
+  &.buttonDisabled {
+    color: $gray-400;
+    &:focus {
+      border-bottom: 2px solid $accent;
+    }
+  }
+}
+.top {
+  color: $gray-700;
+  background-color: $white;
+  border: 2px solid $white;
+  &:focus {
+    border-color: $gray-700;
+  }
+
+  &.buttonDisabled {
+    color: $gray-400;
+  }
+  .buttonSmall {
+    border-width: 1px;
+  }
+}
+.link {
+  color: $gray-500;
+  background-color: transparent;
+  border: 2px solid transparent;
+  &:focus {
+    border-color:$gray-500;
+  }
+
+  &.buttonDisabled {
+    color: $gray-400;
+    &:focus {
+      border: 2px solid transparent;
+    }
+  }
+  &.small {
+    padding: 0;
+    text-align: left;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    text-transform: none;
+  }
+}
+.linkAccent {
+  color: $accent;
+  background-color: transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: 0 !important; // @TODO remove "!important" it when no bootstrap
+
+  &:focus {
+    border-color:$accent;
+  }
+
+  &.buttonDisabled {
+    color: $gray-400;
+    &:focus {
+      border-bottom: 2px solid transparent;
+    }
+  }
+  &.small {
+    padding: 0;
+    min-height: auto;
+    line-height: inherit;
+    text-align: left;
+    text-transform: inherit;
+    font-family: inherit !important;
+    display: inline;
+  }
+}
+.accentBorder {
+  color: $accent;
+  background-color: transparent;
+
+  &.buttonDisabled {
+    color: $gray-400;
+    &:focus {
+      border-bottom: 2px solid transparent;
+    }
+  }
+  &.small {
+    padding: 0;
+    min-height: auto;
+    line-height: inherit;
+    text-align: left;
+    text-transform: inherit;
+    font-family: inherit !important;
+    transform: translateY(1px);
+  }
+  border: 1px solid $accent;
+  border-radius: 3px !important;
+  transition: background-color $time ease-out, color $time ease-out;
+
+  &:focus,
+  &:hover {
+    color: $white;
+    background-color: $accent;
+  }
+}
+.border {
+  background-color: transparent;
+
+  &.buttonDisabled {
+    color: $gray-400;
+    &:focus {
+      border-bottom: 2px solid transparent;
+    }
+  }
+  &.small {
+    padding: 0;
+    min-height: auto;
+    line-height: inherit;
+    text-align: left;
+    text-transform: inherit;
+    font-family: inherit !important;
+    transform: translateY(1px);
+  }
+  border: 1px solid $gray-500;
+  border-radius: 3px !important;
+  transition: background-color $time ease-out, color $time ease-out;
+  color: $black;
+
+  &:focus,
+  &:hover {
+    background-color: transparent;
+    color: $black;
+    border-color: $gray-500;
+  }
+}
+.white {
+  color: $gray-600;
+  background-color: $white;
+  border: 2px solid $white;
+
+  &:focus {
+    border-color:$gray-200;
+  }
+
+  &.buttonDisabled {
+    background-color: $gray-200;
+  }
+  &.small {
+    padding: 0;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    text-align: left;
+    text-transform: none;
+  }
+}
+
+.icon {
+  width: $size-md;
+  height: $size-md;
+  padding: 2px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 50% !important;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.small {
+    width: $size-sm;
+    height: $size-sm;
+    padding: 0;
+  }
+
+  &:focus {
+    box-shadow: $box-shadow-small;
+  }
+
+  &.buttonDisabled {
+    opacity: 0.3;
+  }
+}
+
+.main {
+  &.accent {
+    background-color: $primary;
+    border: 2px solid $primary;
+    &:focus {
+      border-color:darken($primary, 20);
+    }
+
+
+    &.buttonDisabled {
+      background-color: lighten($primary, 8);
+    }
+  }
+  &.linkAccent {
+    color: $primary;
+
+    &:focus {
+      border-color:$primary;
+    }
+  }
+  &.icon {
+    &:focus {
+      border-color: $primary;
+    }
+  }
+}

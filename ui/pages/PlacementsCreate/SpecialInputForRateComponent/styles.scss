@@ -1,0 +1,12 @@
+body {
+  .inputsBox {
+    display: flex;
+    @include inputMargin;
+    justify-content: space-between;
+  }
+
+  .input {
+    margin: 0 $ver-xs;
+    width: calc(50% - #{2*$gap-xs});
+  }
+}

@@ -1,0 +1,38 @@
+
+.doubleInputBox {
+  margin: $ver-md 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.doubleInput {
+  display: flex;
+  align-items: flex-start;
+}
+
+.doubleInputDivide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include mobile {
+    height: 40px;
+    font-size: 12px;
+  }
+  @include desktop {
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+.inputDoubleInput {
+  margin: 0;
+}
+
+.label {
+  @include inputLabel();
+}
+
+.required {
+  color: $danger;
+  margin-left: $gap-xs;
+}

@@ -1,0 +1,24 @@
+body {
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 650px;
+    padding: 20px 50px;
+    text-align: center;
+    background-color: $white;
+  }
+
+  .borderButton {
+    border: 1px solid $accent;
+  }
+
+  .button {
+    @include Abel;
+  }
+
+  .borderButton,
+  .margin {
+    margin: $ver-sm 0;
+  }
+}

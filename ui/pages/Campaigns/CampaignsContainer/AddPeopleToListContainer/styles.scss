@@ -1,0 +1,31 @@
+body {
+  .form {
+    @include modalInnerApp;
+    font-size: 18px;
+  }
+
+  .close {
+    @include modalCloseButtonInnerApp;
+  }
+
+  .title {
+    @include modalInnerAppTitle;
+  }
+
+  .sendCode {
+    margin: 0 $gap-sm 0 0;
+    color: $black;
+    border-color: $gray-500;
+
+    &:focus,
+    &:hover {
+      background-color: transparent;
+      color: $black;
+      border-color: $gray-500;
+    }
+  }
+
+  .item {
+    @include dropDownItem;
+  }
+}

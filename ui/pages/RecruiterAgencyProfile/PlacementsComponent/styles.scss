@@ -1,0 +1,30 @@
+body {
+  .placement {
+    margin: $ver-md 0;
+  }
+
+  .infoBox {
+    display: flex;
+    margin-top: $ver-md;
+    @include mobile {
+      flex-direction: column;
+    }
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .label {
+    color: $gray-600;
+  }
+
+  .jobType {
+    text-transform: capitalize;
+  }
+}

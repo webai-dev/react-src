@@ -1,0 +1,60 @@
+body {
+  .modal {
+    max-width: 1024px;
+  }
+
+  .form {
+    @include modalInnerApp;
+  }
+
+  .close {
+    @include modalCloseButtonInnerApp;
+  }
+
+  .title {
+    @include modalInnerAppTitle;
+  }
+
+  .buttonBox {
+    display: flex;
+    justify-content: center;
+    margin-top: $ver-md;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .button {
+    align-self: center;
+    margin: 0 $gap-sm;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .jobAdderButton {
+    margin-left: 15px;
+    text-transform: none;
+    background-color: $jobAdderColor;
+    border: 2px solid $jobAdderColor;
+  }
+
+  .jobAdderButton:active, .jobAdderButton:focus {
+    border: 2px solid $jobAdderColor;
+  }
+
+  .jobAdderStatement {
+    margin-left: 15px;
+    padding: 11px;
+    color: $jobAdderColor;
+    border: 2px solid $jobAdderColor;
+    border-radius: 3%;
+  }
+
+}

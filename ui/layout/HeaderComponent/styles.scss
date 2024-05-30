@@ -1,0 +1,158 @@
+$buttonZIndex: 3;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  position: relative;
+  padding: 0 $gap-md;
+  color: $white;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+  grid-area: header;
+
+  .headerBox {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+  }
+  .logoButton {
+    z-index: $buttonZIndex;
+    position: relative;
+  }
+  .logo {
+    margin-bottom: 0; // @TODO remove it when no bootstrap
+    @include mobile(400px) {
+      width: 110px;
+    }
+    @include desktop(400px) {
+      width: 150px;
+    }
+  }
+
+  .linkBox {
+    @include desktop(1024px) {
+      display: flex;
+      align-items: center;
+    }
+    @include mobile(1024px) {
+      display: none;
+      z-index: $buttonZIndex -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-height: 100vh;
+      overflow-y: auto;
+      padding-top: 67px;
+      background-color: $gray-800;
+      box-shadow: $box-shadow;
+    }
+  }
+
+  .headerLink {
+    color: $white;
+    text-transform: none;
+    @include desktop(1024px) {
+      margin: 0 $gap-xs;
+      font-weight: 700;
+    }
+    @include mobile(1024px) {
+      justify-content: flex-start;
+      z-index: $buttonZIndex +1;
+      position: relative;
+      font-size: 18px;
+      padding: 20px;
+      background-color: $gray-700;
+      border-bottom: 1px solid $gray-800;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  .header {
+    .headerLink,
+    .signIn {
+      font-size: 14px;
+      @include OpenSans;
+    }
+  }
+
+  .headerLinkHideDesktop {
+    @include desktop(1024px) {
+      display: none;
+    }
+  }
+  .linkBoxActive {
+    display: block;
+    animation: fromTop $time ease-out;
+  }
+
+  @keyframes fromTop {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .toggleMenu {
+    z-index: $buttonZIndex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    cursor: pointer;
+    @include desktop(1024px) {
+      display: none;
+    }
+  }
+
+  .hamburger,
+  .hamburger:after,
+  .hamburger:before {
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background-color: $white;
+  }
+
+  .hamburger {
+    top: 50%;
+    transform: translateY(-1px);
+    transition: background-color 0.3s;
+  }
+
+  .hamburger:after {
+    top: 5px;
+    content: '';
+    transition: transform .3s, top .3s;
+  }
+
+  .hamburger:before {
+    top: -5px;
+    content: '';
+    transition: transform .3s, top .3s;
+  }
+
+  .toggleMenuActive {
+    .hamburger {
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    .hamburger:after {
+      top: 0;
+      transform: rotate(225deg);
+    }
+
+    .hamburger:before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+  }
+
+}

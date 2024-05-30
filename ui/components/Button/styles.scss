@@ -1,0 +1,49 @@
+.btnSmall {
+  padding: 0.25rem 0.5rem!important; // @TODO remove "!important" when no bootstrap
+  font-size: 0.875rem!important; // @TODO remove "!important" when no bootstrap
+  line-height: 1.5!important; // @TODO remove "!important" when no bootstrap
+  text-transform: none!important; // @TODO remove "!important" when no bootstrap
+}
+body {
+  button.btnSmall {
+    text-transform: none!important; // @TODO remove when no bootstrap
+  }
+}
+.btnBig {
+  padding: 12px 25px!important; // @TODO remove "!important" when no bootstrap
+  font-size: 16px!important; // @TODO remove "!important" when no bootstrap
+  font-weight: 400!important; // @TODO remove "!important" when no bootstrap
+  text-transform: uppercase!important; // @TODO remove "!important" when no bootstrap
+}
+:global {
+  .btn {
+    transition: all 0.25s;
+  }
+
+  .btn.btn__loading {
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0.7;
+      background: white;
+      content: " ";
+    }
+  }
+  .btn.btn-xl {
+    padding: 24px 50px;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  .btn.btn-empty-value {
+    color: #aaa;
+    background-color: transperant;
+    border: 1px solid #aaa;
+  }
+  body .btn {
+    text-transform: uppercase !important;
+  }
+}

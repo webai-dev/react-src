@@ -1,0 +1,93 @@
+$header-height: 67px;
+.layout {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+
+  :global {
+    #app {
+      display: grid;
+      min-height: 100vh;
+      white-space: pre-wrap;
+      grid-template-columns: auto;
+      grid-template-rows: $header-height 0 auto;
+      grid-template-areas: "header" "toastify" "main";
+      background-color: $gray-900;
+    }
+
+    .Toastify {
+      z-index: 11;
+      position: relative;
+      width: 100%;
+      grid-area: toastify;
+    }
+
+    // http://sourcr-cactus.s3-website-us-east-1.amazonaws.com/recruiter-profile-preview.html
+    h2, h3, h4, h5 {
+      @include Abel;
+    }
+    a, button, .formsySubmit {
+      @include OpenSans;
+    }
+
+    h2 { // @TODO remove !important when no bootstrap
+      color: $accent !important;
+      font-size: 32px !important;
+      margin-bottom: 20px;
+    }
+
+    h3 { // @TODO remove !important when no bootstrap
+      color: $accent !important;
+      font-size: 24px !important;
+    }
+
+    h4 { // @TODO remove !important when no bootstrap
+      color: $black !important;
+      font-size: 24px !important;
+    }
+
+    h5 { // @TODO remove !important when no bootstrap
+      color: $black;
+      font-size: 22px !important;
+      text-transform: uppercase !important;
+    }
+  }
+}
+
+.toastifyContainer {
+  left: 0;
+  @include mobile {
+    top: auto;
+    bottom: $navbar-internal-size;
+    width: 100%;
+  }
+  @include desktop {
+    top: 0;
+    width: 100%;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  @include desktop {
+    padding: $ver-md $gap-md
+  }
+  @include mobile {
+    padding: $ver-sm $gap-sm
+  }
+}
+
+.logo {
+  max-width: 250px;
+  @include mobile {
+    margin-bottom: $ver-sm;
+  }
+  @include mobile {
+    margin-bottom: $ver-md;
+  }
+}

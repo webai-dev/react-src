@@ -1,0 +1,42 @@
+:export {
+  duration: 500;
+  interval: 2500;
+}
+
+.carouselBox {
+  width: 765px;
+  margin: 0 auto 10px auto;
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin-top: $ver-lg;
+  }
+  $buttonSize: 10px;
+  .action {
+    width: $buttonSize;
+    height: $buttonSize;
+    margin: 0 5px;
+    padding: 0;
+    background-color: $gray-500;
+    border: 1px solid $gray-500;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color $time ease-out, background-color $time ease-out;
+    &:focus,
+    &:hover {
+      border-color: $accent;
+      border-radius: 50%;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .actionActive {
+    background-color: $accent;
+    border-color: $accent;
+  }
+
+}

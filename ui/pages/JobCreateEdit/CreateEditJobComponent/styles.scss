@@ -1,0 +1,87 @@
+@import "variables";
+
+:global {
+  #page-tab-panel-recruiters {
+    .publish-to-marketplace {
+      border: 1px solid transparent;
+      cursor: pointer;
+
+      &.publish-to-marketplace__selected {
+        border-color: $pink;
+      }
+    }
+
+    .publish-to-marketplace--tick {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 10px 20px 20px;
+      background: white;
+    }
+
+    .publish-to-marketplace--info {
+      padding: 20px 20px 20px 10px;
+      background: white;
+
+      h3 {
+        color: $pink;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  #page-tab-panel-search-type {
+    .search-type {
+      padding: 20px;
+      border: 1px solid $light-grey;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &:first-child {
+        margin-right: 10px;
+      }
+
+      &:last-child {
+        margin-left: 10px;
+      }
+
+      ul li {
+      }
+
+      h2 {
+        -webkit-transition: all 0.25s linear;
+        transition: all 0.25s linear;
+      }
+
+      &.search-type__active {
+        color: $pink;
+        border-color: $pink;
+      }
+
+      &.search-type__inactive {
+        color: rgba($grey, 0.5);
+        border-color: rgba($grey, 0.5);
+      }
+    }
+  }
+}
+
+body {
+  .button {
+    margin: 0 $gap-md;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

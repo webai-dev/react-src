@@ -1,0 +1,11 @@
+.error {
+  color: $danger;
+  margin-bottom: $ver-md;
+  word-break: break-word;
+}
+.autoCompleteOff {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  position: absolute;
+}

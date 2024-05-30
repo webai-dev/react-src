@@ -1,0 +1,26 @@
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  height: 40px;
+  border-bottom: $border;
+}
+
+.resultInfo {
+  display: flex;
+  align-items: center;
+}
+
+.resultTotal {
+  margin-right: $gap-sm;
+  text-align: center;
+}
+
+.resultSeeAll {
+  text-transform: uppercase;
+  transform: translateY(2px);
+}
+.accent {
+  color: $accent;
+}

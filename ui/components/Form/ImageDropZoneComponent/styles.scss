@@ -1,0 +1,98 @@
+.dropZone {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: $gray-700;
+  text-align: center;
+  text-transform: uppercase;
+  background-position: center;
+  background-size: cover;
+  border: $border;
+  cursor: pointer;
+  transition: color $time ease-out, border-color $time ease-out;
+  &:hover {
+    color: $black;
+    border-color: $black;
+    box-shadow: inset $box-shadow-small;
+  }
+  input {
+    width: 10px;
+  }
+  &:hover {
+    .tip {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+  }
+}
+.tip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: $ver-sm $gap-md;
+  color: $black;
+  font-size: 12px;
+  text-transform: none;
+  pointer-events: none;
+  opacity: 0;
+  background-color: $gray-300;
+  border-radius: 4px;
+  transition: all $time ease-out;
+  transform: translateY(100%);
+  z-index: 1;
+  @include mobile {
+    display: none;
+  }
+}
+
+.salarySelectVisible  {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropZoneHideText {
+  color: transparent;
+}
+.dropZoneActive,
+.dropZoneFocused {
+  color: $black;
+  border-color: $black;
+  box-shadow: inset $box-shadow-small;
+}
+.remove {
+  margin-top: $ver-xs;
+}
+.remove,
+.error {
+  color: $danger;
+}
+.modalBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $ver-md $gap-md;
+}
+.cropper {
+  box-sizing: content-box;
+  border: 2px solid $primary;
+  border-radius: 3px;
+}
+.rangeInput {
+  width: 200px;
+  margin-top: $ver-md;
+}
+.buttonBox {
+  display: flex;
+  align-items: center;
+  margin-top: $ver-md;
+}
+.button {
+  width: 95px;
+  &:last-child {
+    margin-left: $gap-md;
+  }
+}

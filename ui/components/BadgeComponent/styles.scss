@@ -1,0 +1,14 @@
+$badge-size: 22px;
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: $badge-size;
+  height: $badge-size;
+  box-sizing: border-box;
+  padding: 0 #{$badge-size/4};
+  color: $white;
+  font-size: 12px;
+  background-color: $accent;
+  border-radius: #{$badge-size/2};
+}

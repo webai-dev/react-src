@@ -1,0 +1,148 @@
+.profile {
+  display: flex;
+  padding: $ver-sm 0;
+  color: $gray-600;
+  border-bottom: $border;
+  cursor: pointer;
+  align-items: center;
+
+  &:focus,
+  &:hover {
+    color: $gray-600;
+    background-color: $gray-100;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.profileNoUnderline {
+  border-bottom: none;
+}
+
+.avatar {
+  margin-right: $gap-md;
+  @include desktop {
+    width: 70px;
+    height: 70px;
+  }
+  @include mobile {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.titleBox {
+  color: $accent;
+  font-size: 20px;
+}
+.location,
+.titleBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  word-break: break-word;
+  align-items: flex-start;
+  flex-direction: column;
+  @include desktop(630px) {
+    flex-direction: row;
+  }
+  @include desktop($container-md) {
+    flex-direction: column;
+  }
+
+  @include desktop($screen-desktop) {
+    flex-direction: row;
+  }
+}
+$name-width: 300px;
+
+.name {
+  margin-right: $gap-md;
+  @include desktop(430px) {
+    width: $name-width;
+  }
+  justify-content: flex-start;
+}
+
+.rating {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin-top: 5px;
+  color: $black;
+  font-size: 14px;
+}
+
+.infoBox {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.mainInfoBox {
+  flex: 1 1 auto;
+}
+
+.info {
+  color: black;
+}
+
+.location {
+  font-size: 14px;
+  svg {
+    flex: 0 0 auto;
+    transform: translateY(4px);
+  }
+}
+
+.locationInfo {
+  flex: 1 1 auto;
+  text-align: end;
+}
+
+.agencyLink {
+  word-break: break-all;
+  max-width: $name-width;
+  justify-content: flex-start;
+}
+
+.score {
+  margin-left: $gap-md;
+}
+
+.profileCompanyEdit {
+  padding: $ver-md;
+  color: $black;
+  background-color: $gray-100;
+  @include desktop {
+    margin: $ver-md 0;
+    padding: $ver-md $gap-md;
+  }
+  @include mobile {
+    margin: $ver-sm 0;
+    padding: $ver-sm $gap-md;
+  }
+
+  .nameBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rating {
+    margin-top: 0;
+    color: $black;
+  }
+
+  .specialisation {
+    color: $black;
+  }
+}
+
+.header {
+  color: $accent;
+  font-size: 24px;
+  @include Abel;
+}

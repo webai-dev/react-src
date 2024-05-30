@@ -1,0 +1,49 @@
+body {
+  .titleBox {
+    margin-bottom: $ver-xl;
+    text-align: center;
+  }
+
+  .box {
+    padding: 0 20px;
+  }
+
+  .titleMargin {
+    margin: $ver-lg 0;
+  }
+
+  .tab {
+    background-color: $white;
+    @include mobile {
+      padding: $ver-md $gap-md;
+      margin-bottom: $ver-md;
+    }
+    @include desktop {
+      padding: $ver-lg $gap-lg;
+      margin-bottom: $ver-lg;
+    }
+  }
+
+  $ver-info-padding: $gap-md;
+
+  .mainInfoBox {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px $ver-xl -15px;
+  }
+
+  .mainInfoItem {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+    margin: 20px 0;
+    padding: 15px;
+  }
+
+  .document {
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin: 10px 0;
+  }
+}

@@ -1,0 +1,121 @@
+$line-width: 1px;
+.container {
+  position: relative;
+  width: 100%;
+  @include inputMargin;
+}
+
+.inputBox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+  border-bottom: $line-width solid transparent;
+
+  .input {
+    //border: none !important; // @TODO remove it when no bootstrap
+  }
+}
+
+.label {
+  @include inputLabel();
+  color: $black;
+  text-transform: inherit;
+  cursor: pointer;
+  @include mobile {
+    font-size: 16px;
+    margin: 0 $gap-xs 0 0;
+  }
+  @include desktop {
+    font-size: 16px;
+    margin: 0 $gap-xs;
+  }
+}
+
+.required {
+  margin-left: $gap-xs;
+  color: $danger;
+}
+
+.input {
+  flex: 0 0 auto;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: $border;
+
+  &:focus {
+    border: $border;
+  }
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: none;
+  }
+
+  -webkit-appearance: none;
+}
+
+@keyframes opaque {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.error {
+  display: block;
+  left: 0;
+  margin-left: $gap-md;
+  color: $danger;
+  font-size: 12px;
+  animation: opaque $time ease-out both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.containerError {
+  .inputBox {
+    transform: translate3d(0, 0, 0);
+    animation: shake $time-long cubic-bezier(.36, .07, .19, .97) both;
+  }
+
+  .label {
+    color: $danger;
+  }
+}
+
+.containerDisabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

@@ -1,0 +1,52 @@
+body {
+  .form {
+    padding: 45px;
+  }
+
+  .close {
+    position: absolute;
+    top: 18px;
+    right: 13px;
+  }
+
+  .title {
+    @include h2;
+  }
+
+  .info {
+    margin: $ver-md 0;
+  }
+
+  .linkedIn {
+    display: inline-flex;
+    padding: 0 $gap-md 0 0;
+    color: $white;
+    text-transform: none;
+    background-color: $linkedIn;
+    border: none;
+
+    &:focus,
+    &:hover {
+      color: $white;
+      background-color: $linkedIn;
+    }
+  }
+
+  .linkedInIcon {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    padding: 0 $gap-md;
+    border-right: 1px solid $white;
+    @include mobile {
+      height: 40px;
+    }
+    @include desktop {
+      height: 50px;
+    }
+
+    svg {
+      fill: $white;
+    }
+  }
+}

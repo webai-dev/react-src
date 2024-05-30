@@ -1,0 +1,38 @@
+.box {
+  @include desktop {
+    padding: 60px 40px 40px;
+  }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.avatar {
+  border-radius: 50%;
+  @include mobile {
+    width: 135px;
+    height: 135px;
+  }
+  @include desktop {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.marginBottom {
+  margin-bottom: $ver-md;
+}
+
+.title {
+  text-align: center;
+  @include Abel();
+  color: $black !important;
+  @include desktop() {
+    font-size: 30px !important;
+  }
+  @include mobile() {
+    font-size: 20px !important;
+  }
+}

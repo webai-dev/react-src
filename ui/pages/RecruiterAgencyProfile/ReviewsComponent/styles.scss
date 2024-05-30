@@ -1,0 +1,11 @@
+body {
+  .boxRadio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .reviews {
+    margin-top: $ver-md;
+  }
+}

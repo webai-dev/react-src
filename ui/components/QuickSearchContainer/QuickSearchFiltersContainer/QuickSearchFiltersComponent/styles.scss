@@ -1,0 +1,57 @@
+
+.box {
+  flex: 0 0 auto;
+  display: flex;
+  @include mobile($screen-desktop) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+$filters-width: 175px;
+$border-width: 1px;
+.dropDown {
+  flex: 0 0 auto;
+  @include desktop($screen-desktop) {
+    width: $filters-width;
+  }
+  @include mobile($screen-desktop) {
+    height: 48px;
+  }
+}
+
+.labelBox {
+  width: 100%;
+  height: 100%;
+  border: $border-width solid $gray-300;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $gap-md;
+  @include mobile($screen-desktop) {
+    cursor: pointer;
+    border-top: none;
+  }
+  @include desktop($screen-desktop) {
+    border-left: none;
+  }
+}
+
+.filters {
+  padding-left: $gap-md;
+  background-color: $white;
+  border: $border-width solid $gray-300;
+  @include desktop($screen-desktop) {
+    border-top: none;
+    width: $filters-width + $border-width;
+  }
+  @include mobile($screen-desktop) {
+    width: 100%;
+  }
+}
+
+.dropIcon {
+  svg {
+    transform: translateY(1px);
+    width: 10px;
+  }
+}

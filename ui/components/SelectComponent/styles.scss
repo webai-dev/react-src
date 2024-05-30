@@ -1,0 +1,115 @@
+.dropDownLabel {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: black;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: $border;
+  @include mobile {
+    height: 40px;
+    padding: 0 $gap-sm;
+    font-size: 12px;
+  }
+  @include desktop {
+    height: 50px;
+    padding: 0 $gap-md;
+    font-size: 16px;
+  }
+
+  svg {
+    margin-left: $gap-sm;
+    width: 12px;
+    height: 12px;
+    flex: 0 0 auto;
+  }
+}
+
+.dropDownSelect {
+  @include dropDownSelect
+}
+
+.item {
+  @include dropDownItem;
+}
+
+.itemActive {
+  color: $gray-100;
+  background-color: $primary;
+}
+
+.container {
+  width: 100%;
+  @include inputMargin;
+
+  .dropDownLabel {
+    color: $gray-700;
+    background-color: $gray-100;
+    @include mobile {
+      height: 40px;
+      padding: 0 $gap-sm;
+      font-size: 12px;
+    }
+    @include desktop {
+      height: 50px;
+      padding: 0 $gap-md;
+      font-size: 16px;
+    }
+  }
+
+  .whiteLabel {
+    background-color: $white;
+  }
+
+  .required {
+    margin-left: $gap-xs;
+    color: $danger;
+  }
+
+  .label {
+    @include inputLabel();
+  }
+}
+
+.value {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.containerError {
+  .dropDown {
+    transform: translate3d(0, 0, 0);
+    animation: shake $time-long cubic-bezier(.36, .07, .19, .97) both;
+  }
+
+  .dropDownLabel {
+    color: $danger;
+  }
+}
+.containerDisabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

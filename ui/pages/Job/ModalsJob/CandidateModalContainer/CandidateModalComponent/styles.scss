@@ -1,0 +1,120 @@
+body {
+  .modal {
+    max-width: 1024px;
+  }
+}
+
+.form {
+  @include modalInnerApp;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close {
+  @include modalCloseButtonInnerApp;
+}
+
+.title {
+  @include modalInnerAppTitle;
+}
+
+.topButtons {
+  position: absolute;
+  margin-top: 2px;
+  @include modalCloseButtonInnerApp($left: true);
+}
+
+.socialButton {
+  width: auto;
+  height: auto;
+}
+
+.box {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.fileBox {
+  margin: $ver-md 0;
+}
+
+.valueBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.smallValue {
+  width: 32%;
+}
+
+.requestBox {
+  width: 100%;
+  border: 1px solid $gray-500;
+}
+
+.requestItem {
+  padding: $ver-lg $gap-md;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $gray-500;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.requestItemPiece {
+  margin: 0 $gap-md;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.requestItemButtons {
+  flex: 1;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.interviewTitle {
+  margin-bottom: $ver-md;
+  align-self: flex-start;
+}
+
+.buttonBox {
+  margin: $ver-md 0;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  margin: 0 $gap-sm;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.status {
+  align-self: center;
+  margin-right: $gap-md;
+}
+
+.infoText {
+  font-size: 22px;
+  text-align: center;
+}

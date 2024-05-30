@@ -1,0 +1,80 @@
+body {
+  .row {
+    display: flex;
+    @include mobile(1100px) {
+      flex-direction: column;
+    }
+    @include desktop(1100px) {
+      align-items: flex-start;
+    }
+    margin: $ver-md 0;
+  }
+
+  .cardBox {
+    flex: 1 1 50%;
+
+    @include desktop(1100px) {
+      margin: 0 $gap-md;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    @include mobile(1100px) {
+      margin-bottom: $ver-md;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .card {
+    background-color: $white;
+    padding: 40px;
+    margin: $ver-md 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .pendingTitle {
+    margin: 40px 0 10px 0;
+  }
+
+  .buttonsBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .button {
+    margin-top: $ver-sm;
+    margin-right: $gap-md;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .jobType {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .jobLabel {
+    margin-top: 7px;
+    font-size: 13px;
+    color: $gray-500;
+  }
+
+  .info {
+    word-break: break-all;
+  }
+}

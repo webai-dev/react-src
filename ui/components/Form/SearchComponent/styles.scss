@@ -1,0 +1,76 @@
+.searchBox {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  font-size: 14px;
+  .input {
+    border: $border !important; // @TODO remove "!important" it when no bootstrap
+  }
+}
+
+
+.label {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: #{$gap-md + 3px};
+  margin: 0;
+  color: $gray-500;
+  font-size: 12px;
+  text-transform: none;
+
+  // @TODO remove it when no bootstrap
+  pointer-events: none;
+  opacity: 1;
+  transform: translateY(-50%);
+  svg {
+    width: 14px;
+    height: 14px;
+    margin-right: $gap-xs;
+    transform: translateX(-1px);
+  }
+  // @TODO remove it when no bootstrap END
+}
+
+
+.input {
+  flex: 1;
+  padding: $ver-sm $gap-md;
+  color: inherit;
+  // @TODO remove it when no bootstrap
+  background-color: transparent;
+  border: none !important;
+  border-radius: 5px;
+  // @TODO remove it when no bootstrap END
+}
+
+// Search styles for inner pages
+.searchBoxInner {
+  flex: 1;
+  font-size: 18px;
+  .input {
+    border: none !important;
+  }
+  @include desktop {
+    max-width: 450px;
+  }
+}
+.labelInner {
+  left: $gap-md;
+  font-size: 18px;
+}
+.inputInner {
+  flex: 1;
+}
+
+.searchIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}

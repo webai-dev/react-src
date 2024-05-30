@@ -1,0 +1,17 @@
+body {
+  .modal {
+    max-width: 1124px;
+    max-height: calc(100vh - 60px);
+    transform: translateY(20px);
+  }
+  .modalInner {
+    padding: 120px 40px 50px 40px;
+  }
+}
+
+
+.closeBox {
+  display: flex;
+  align-items: center;
+  @include modalCloseButtonInnerApp;
+}

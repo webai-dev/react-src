@@ -1,0 +1,88 @@
+.form {
+  @include form;
+
+  font-size: 18px;
+  .campaignTypeInput {
+    max-width: 350px;
+    margin-left: $gap-lg;
+    flex: 1 1 auto;
+    margin-bottom: 0;
+  }
+  .titleInput {
+    flex: 1 1 auto;
+    input {
+      font-size: 20px;
+    }
+  }
+  .input {
+    @include input3;
+  }
+
+  .input2 {
+    @include desktop {
+      width: 66%;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+}
+.row {
+  border-bottom: $border;
+  padding: 0 15px 10px 15px;
+  &:nth-last-child(2) {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+.marginBottom {
+  margin-bottom: 25px;
+}
+.inputBox {
+  display: flex;
+  justify-content: space-between;
+}
+.link {
+  color: inherit;
+  text-decoration: underline;
+  border: none;
+  transform: none;
+  &:focus,
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+.box {
+  margin: 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: auto;
+}
+.icon {
+  margin-right: $gap-sm;
+  display: flex;
+  align-items: center;
+}
+.generateLink {
+  display: flex;
+  align-items: center;
+}
+.generateButton {
+  margin-right: $gap-md;
+}
+
+.modalInner {
+  @include modalInnerApp;
+}
+
+.close {
+  @include modalCloseButtonInnerApp;
+}
+
+.title {
+  @include modalInnerAppTitle;
+}

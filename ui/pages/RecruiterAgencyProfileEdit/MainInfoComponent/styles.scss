@@ -1,0 +1,56 @@
+:export {
+  cropperBorder: 30;
+  avatarWidth: 165;
+  backgroundImageWidth: 200;
+  backgroundImageWidthToHeightRatio: 3.8;
+}
+
+.backgroundBox {
+  .backgroundImage {
+    z-index: 1;
+    width: 100%;
+    @include inputMargin;
+    @include mobile {
+      width: 225px;
+      height: 60px;
+    }
+    @include desktop {
+      width: 304px;
+      height: 80px;
+    }
+  }
+}
+
+.avatarBox {
+  .avatar {
+    border-radius: 50%;
+    @include inputMargin;
+    @include mobile {
+      width: 135px;
+      height: 135px;
+    }
+    @include desktop {
+      width: 180px;
+      height: 180px;
+    }
+  }
+}
+
+.header {
+  margin-top: $ver-xl !important;
+  word-break: break-word;
+}
+
+.title {
+  margin: $ver-xl 0 $ver-lg 0 !important;
+}
+
+.aboutBox {
+  width: 100%;
+}
+
+.hiddenMobile {
+  @include mobile {
+    display: none;
+  }
+}

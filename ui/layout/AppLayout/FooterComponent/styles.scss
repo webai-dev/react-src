@@ -1,0 +1,39 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $gap-md;
+  background-color: $dark;
+  grid-area: footer;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 0; // @TODO remove it when no bootstrap
+  @include mobile {
+    height: 20px;
+  }
+  @include desktop {
+    height: 50px;
+  }
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  @include desktop {
+    margin-top: $ver-md;
+  }
+}
+.copyRight {
+  color: $white;
+  @include desktop {
+    margin-top: $ver-md;
+  }
+}

@@ -1,0 +1,321 @@
+// ====================================
+// IT HAS TO CONTAIN ONLY SCSS MIXINS!!!
+// ====================================
+@mixin mobile($xl: $container-md) {
+  @media (max-width: if($xl, $xl - 1px, $screen-desktop - 1px)) {
+    @content;
+  }
+}
+
+@mixin desktop($xl: $container-md) {
+  @media (min-width: if($xl, $xl, $screen-desktop)) {
+    @content;
+  }
+}
+
+@mixin icon($width: 15px, $invert: null) {
+  stroke-width: 3px;
+  stroke: if($invert, none, currentColor);
+  fill: if($invert, currentColor, none);
+  width: $width;
+}
+
+@mixin h2() { // should be deleted at some point use instead <h#>
+  color: $accent;
+  font-size: 32px;
+  margin: $ver-sm 0;
+  font-weight: 400;
+}
+
+@mixin h3() { // should be deleted at some point use instead <h#>
+  color: $accent;
+  font-weight: 200;
+  font-size: 24px;
+}
+
+@mixin h4() { // should be deleted at some point use instead <h#>
+  color: $black;
+  font-size: 24px;
+}
+
+@mixin h5() { // should be deleted at some point use instead <h#>
+  color: $black;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+@mixin Abel() {
+  font-family: "Abel", Tahoma, sans-serif !important; // @TODO remove !important when no bootstrap
+}
+
+@mixin Montserrat() {
+  font-family: "Montserrat", Verdana, sans-serif !important; // @TODO remove !important when no bootstrap
+}
+
+@mixin OpenSans() {
+  font-family: "Open Sans", Geneva, sans-serif !important; // @TODO remove !important when no bootstrap
+}
+
+@mixin inputLabel {
+  color: $gray-500;
+  align-items: center;
+  opacity: 1 !important; // @TODO remove it when no bootstrap
+  text-transform: uppercase;
+  @include mobile {
+    margin: 10px 12px;
+    font-size: 12px;
+  }
+  @include desktop {
+    margin: $ver-sm $gap-md;
+    font-size: 13px;
+  }
+}
+@mixin inputRequired {
+  margin-left: $gap-xs;
+  color: $danger;
+  font-weight: 800;
+}
+@mixin inputError {
+  display: block;
+  left: 0;
+  margin-left: $gap-md;
+  color: $danger;
+  font-size: 12px;
+  animation: opaque $time ease-out both;
+  text-transform: none;
+}
+
+@mixin form {
+  background-color: $white;
+  @include mobile {
+    padding: 30px 20px
+  }
+  @include desktop {
+    padding: 60px 40px
+  }
+}
+
+@mixin inputMargin() {
+  margin: 0 0 15px 0;
+}
+
+@mixin grayBox {
+  display: flex;
+  background-color: $gray-100;
+  @include desktop {
+    margin: $ver-md 0;
+    padding: $ver-md $gap-lg;
+  }
+  @include mobile {
+    margin: $ver-sm 0;
+    padding: $ver-sm $gap-md;
+  }
+}
+
+@mixin alertSuccess {
+  border-color: lighten($success, 45%);
+  color: $success;
+  background-color: lighten($success, 45%);
+}
+
+@mixin alertWarning {
+  border-color: #faebcc;
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+
+@mixin alertError {
+  border-color: lighten($danger, 35%);
+  color: $danger;
+  background-color: lighten($danger, 40%);
+}
+
+@mixin alertInfo {
+  border-color: lighten($info, 55%);
+  color: $info;
+  background-color: lighten($info, 60%);
+}
+
+@mixin emptyCard {
+  background-color: $white;
+  padding: $ver-lg $gap-md;
+  text-align: center;
+}
+
+// MODALS
+@mixin modalInnerApp {
+  @include mobile {
+    padding: 30px;
+  }
+  @include desktop {
+    padding: 40px;
+  }
+}
+
+@mixin modalCloseButtonInnerApp($left: false) {
+  position: absolute;
+  padding: 0;
+  @include mobile {
+    top: 18px;
+    @if $left {
+      left: 18px;
+    } @else {
+      right: 18px;
+    }
+  }
+  @include desktop {
+    top: 35px;
+    @if $left {
+      left: 35px;
+    } @else {
+      right: 35px;
+    }
+  }
+  svg {
+    @include desktop {
+      width: 50px;
+      height: 50px;
+    }
+    @include mobile {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+@mixin modalInnerAppTitle {
+  text-align: center;
+  width: 100%;
+
+  @include mobile {
+    margin-bottom: $ver-md !important;
+    padding: 0 25px;
+  }
+  @include desktop {
+    margin-top: 38px;
+    margin-bottom: $ver-xl !important;
+    padding: 0 55px;
+  }
+}
+
+@mixin hint {
+  background-color: $gray-300;
+  border-radius: 4px;
+  padding: $ver-sm $gap-md;
+}
+
+@mixin dropDownButtonLabel {
+  @include Montserrat;
+  display: inline-flex;
+  opacity: 1;
+  svg {
+    margin-left: $gap-xs;
+    width: 10px;
+    transform: translateY(1px);
+  }
+  background-color: $primary;
+  border: 2px solid $primary;
+  min-height: 48px;
+  font-size: 18px;
+  padding: 0 15px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  color: $gray-100;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: color $time ease-out, transform $time ease-out, background-color $time ease-out, opacity $time ease-out, border $time ease-out;
+  &:focus {
+    border-color:darken($primary, 20);
+  }
+}
+
+@mixin dropDownSelect {
+  align-items: stretch;
+  width: 100%;
+  max-height: 250px;
+  border: $border;
+  display: flex;
+  flex-direction: column;
+  .item {
+    @include OpenSans;
+  }
+}
+
+@mixin dropDownItem {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: $ver-xs $gap-sm;
+  text-align: left;
+  text-transform: uppercase;
+  word-break: break-word;
+  background-color: $white;
+  border: none;
+  border-bottom: 1px solid $gray-300;
+  outline: none;
+  cursor: pointer;
+  &:last-child {
+    border-bottom: none;
+  }
+  &:focus,
+  &:hover {
+    color: $white;
+    background-color: $gray-700;
+  }
+}
+
+@mixin input3Box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+@mixin input3 {
+  flex: 0 1 auto;
+  @include desktop {
+    width: calc(33% - #{2*$gap-xs});
+  }
+  @include mobile {
+    width: 100%;
+     @include inputMargin;
+  }
+}
+
+@mixin colBox($xl: $container-md) {
+  display: flex;
+  background-color: $white;
+  margin-bottom: 20px;
+  @include mobile($xl) {
+    padding: 30px;
+    flex-direction: column;
+  }
+  @include desktop($xl) {
+    padding: 60px 55px;
+    justify-content: space-between;
+  }
+}
+
+@mixin col($xl: $container-md) {
+  width: calc(50% - #{$gap-md});
+  flex: 0 0 auto;
+  @include mobile($xl) {
+    width: 100%;
+    margin-bottom: $ver-md;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin li {
+  border-top: $border;
+  &:last-child {
+    border-bottom: $border;
+  }
+  padding: 10px 0;
+}

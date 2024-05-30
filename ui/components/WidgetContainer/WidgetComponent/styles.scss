@@ -1,0 +1,319 @@
+.col {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
+  @include desktop($screen-tablet) {
+    width: 450px;
+  }
+  @include mobile($screen-tablet) {
+    min-width: 450px;
+  }
+  position: relative;
+  min-height: 410px;
+}
+.biggerBox {
+  min-height: 510px;
+}
+.colDouble {
+
+  @include desktop($screen-tablet) {
+    width: 800px;
+  }
+  @include mobile($screen-tablet) {
+    min-width: 800px;
+  }
+}
+.filler {
+  flex: 1 1 auto;
+}
+.small,
+.col,
+.modal {
+  font-family: 'Helvetica', sans-serif;
+  a, button, h1, h2, h3, span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    background-color: transparent;
+    line-height: 24px;
+    box-sizing: border-box;
+  }
+
+  .logoButton {
+    margin-top: $ver-sm;
+  }
+
+  .logo {
+    margin-bottom: 0; // @TODO do we need that after we remove bootstrap
+    @include mobile($screen-tablet) {
+      width: 120px;
+    }
+    @include desktop($screen-tablet) {
+      width: 140px;
+    }
+  }
+
+  .allReviewsButton {
+    font-size: 14px;
+    text-decoration: none;
+    color: $accent;
+  }
+  @mixin carousel() {
+    max-width: 440px;
+  }
+
+  .box {
+    margin-top: $ver-md;
+    @include carousel;
+  }
+  .ratingMain {
+    margin-top: 5px;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: inherit;
+    transition: none;
+    @include carousel;
+    text-decoration: none;
+  }
+  .boxDouble,
+  .itemDouble {
+    max-width: 800px;
+  }
+
+  $line-height-title: 26;
+  $line-height-title-mobile: 22;
+  $line-clamp-title: 2;
+  .itemTitle {
+    margin-bottom: $ver-sm;
+    color: $accent;
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp-title;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: center;
+    @include desktop($screen-tablet) {
+      font-size: 24px;
+      line-height: #{$line-height-title}px;
+      max-height: #{$line-clamp-title*$line-height-title}px;
+    }
+    @include mobile($screen-tablet) {
+      font-size: 20px;
+      line-height: #{$line-height-title-mobile}px;
+      max-height: #{$line-clamp-title*$line-height-title-mobile}px;
+    }
+  }
+
+  $line-height: 24;
+  $line-height-mobile: 22;
+  $line-clamp: 4;
+  .itemText {
+    margin-top: $ver-md;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    @include desktop($screen-tablet) {
+      line-height: #{$line-height-mobile}px;
+      max-height: #{$line-clamp*$line-height-mobile}px;
+    }
+    @include mobile($screen-tablet) {
+      line-height: #{$line-height}px;
+      max-height: #{$line-clamp*$line-height}px;
+      font-size: 14px;
+    }
+  }
+
+  .itemName {
+    margin-top: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .close {
+    @include modalCloseButtonInnerApp;
+    color: $gray-600;
+    cursor: pointer;
+  }
+
+  .titleBox {
+    align-self: stretch;
+    margin-bottom: $ver-xl;
+    padding-right: 40px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .titleBold {
+    font-size: 24px;
+  }
+
+  .smallInfo {
+    text-align: center;
+  }
+
+}
+
+.carouselBox {
+  align-items: center;
+  box-sizing: content-box;
+  @include mobile($screen-tablet) {
+    padding: $ver-xs $gap-xs;
+  }
+  @include desktop($screen-tablet) {
+    padding: $ver-lg $gap-lg;
+  }
+}
+
+.border {
+  border: $border;
+}
+
+.carouselBoxDark {
+  color: $white;
+  background-color: $gray-800;
+}
+
+.small {
+  box-shadow: $box-shadow-dark;
+  padding: $ver-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  background-color: $white;
+  cursor: pointer;
+
+  .logo {
+    padding: 0;
+    margin-top: 10px;
+    width: 108px;
+  }
+}
+
+.aside {
+  box-shadow: 3px 2px 5px 0 rgba(0, 0, 0, 0.2);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 130px;
+  flex-direction: column;
+
+  .rating {
+    margin: $ver-sm 0;
+  }
+  padding-bottom: 30px;
+}
+
+.footer {
+  box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.2);
+  left: 0;
+  width: 100%;
+  bottom: 0;
+
+  .logo {
+    margin-top: 0;
+    margin-left: $gap-sm;
+  }
+
+  .rating {
+    margin: 0 $gap-sm;
+    transform: translateY(-1px);
+  }
+
+  font-size: 14px;
+}
+
+.inApp {
+  position: absolute;
+}
+
+.modal {
+  background-color: #F5F5F5;
+  //max-width: 600px;
+  //width: calc(100% - #{2*$gap-sm});
+  //max-height: calc(100% - #{2*$ver-sm});
+  .logo {
+    width: 180px;
+    margin-bottom: $ver-xs;
+  }
+}
+
+.boxModal {
+  height: 100%;
+  @include mobile($screen-tablet) {
+    padding: 25px 15px;
+  }
+  @include desktop($screen-tablet) {
+    overflow-y: hidden;
+    padding: 44px 35px;
+  }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  .logoButton {
+    width: 184px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: $ver-md;
+  }
+
+  .itemTitle {
+    text-align: left;
+  }
+  .item {
+    align-items: flex-start;
+    max-width: 100%;
+    background-color: $white;
+    margin-bottom: $ver-sm;
+    padding: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .itemText {
+    text-align: start;
+  }
+}
+
+.carouselBoxDark {
+  color: $white;
+  background-color: $gray-800;
+}
+.aside {
+  box-sizing: border-box;
+  &.carouselBoxDark {
+    box-shadow: 3px 2px 5px 0 rgba(210, 210, 210, 0.2);
+  }
+}
+.footer {
+  &.carouselBoxDark {
+    box-shadow: 0 -2px 5px 0 rgba(210, 210, 210, 0.2);
+  }
+}
+.items {
+  align-self: stretch;
+  @include desktop($screen-tablet) {
+    overflow-y: auto;
+  }
+}
+.marginTop {
+  margin-top: $ver-md;
+}
+.fade {
+  color: $gray-600;
+}

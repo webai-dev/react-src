@@ -1,0 +1,67 @@
+@import "variables";
+
+body {
+  .button {
+    margin-left: $gap-md;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .avatarBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $ver-md;
+  }
+
+  .avatar {
+    height: 180px;
+    width: 180px;
+  }
+
+  .infoBox {
+    @include input3Box;
+    @include desktop {
+      flex-wrap: wrap;
+    }
+  }
+
+  .infoItem {
+    @include input3;
+  }
+
+  :global {
+    .recruiter--section-title {
+      margin: 20px 0 10px;
+      font-size: 18px;
+    }
+
+    .recruiter-rating {
+      .recruiter--section-title {
+        margin-top: 0;
+      }
+    }
+
+    .recruiter--action-buttons {
+      display: flex;
+      position: absolute;
+      top: 35px;
+      left: 35px;
+      width: 200px;
+    }
+
+    .recruiter-profile--favourite {
+      color: white;
+      font-size: 50px;
+      line-height: 48px;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      cursor: pointer;
+
+      &.recruiter-profile--favourite__is-favourite {
+        color: $activeGold;
+        text-shadow: none;
+      }
+    }
+  }
+}

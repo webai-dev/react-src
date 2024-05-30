@@ -1,0 +1,281 @@
+$pageMarginVer: 17mm;
+$pageWidth: 29.7cm - $pageMarginVer;
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}
+
+.mainBox {
+  display: flex;
+  justify-content: center;
+
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  p:first-line,
+  div:first-line,
+  blockquote:first-line,
+  li:first-line {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+.table {
+  @media print {
+    width: $pageWidth;
+  }
+  @media screen {
+    width: 100%;
+  }
+  page-break-after: always;
+
+  h2 {
+    @include Abel;
+    margin-bottom: 5.3mm;
+  }
+}
+
+.tableFooter {
+  display: table-footer-group;
+}
+
+.noWrap {
+  page-break-inside: avoid;
+}
+
+.bannerBox {
+  width: 100%;
+  height: $pageWidth/3.8;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  display: flex;
+  justify-content: center;
+}
+.banner {
+  width: $pageWidth;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+}
+
+$verSpace: 29mm;
+$horSpace: 4mm;
+.infoBlock {
+  padding: $verSpace $horSpace $verSpace $horSpace;
+  display: flex;
+  justify-content: center;
+}
+
+.white,
+.gray {
+  @media print {
+    padding-top:5mm;
+  }
+}
+
+
+.gray {
+  background-color: $gray-100;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.white {
+  background-color: $white;
+}
+
+.container {
+  width: 100%;
+  @media screen {
+    max-width: 930px;
+  }
+  @media print {
+    padding: 0 8.4mm
+  }
+}
+
+.profileBlock {
+  display: flex;
+}
+.right,
+.left {
+  flex: 1 1 auto;
+  display: inline-flex;
+  padding: 0 4mm;
+  width: 50%;
+  flex-direction: column;
+}
+
+.right {
+  align-items: flex-start;
+}
+
+.left {
+  align-items: flex-end;
+}
+
+.break {
+  page-break-before: always;
+  height: 1px;
+  opacity: 0;
+}
+
+.markDown {
+  margin-top: 13mm;
+  text-align: center;
+  word-break: break-word;
+}
+
+.avatar {
+  width: 50mm;
+  height: 50mm;
+}
+
+.mainTitle {
+  margin: 0;
+  margin-bottom: 0!important;
+}
+
+.itemBox {
+  padding: 2mm 0;
+  box-sizing: border-box;
+}
+
+.item {
+  background-color: $white;
+  padding: 5.3mm;
+}
+
+.itemTitle {
+  @include Abel;
+  font-size: 24px;
+  margin-bottom: 2mm;
+}
+
+.itemText {
+  margin: 2mm 0;
+}
+
+.itemName {
+  font-weight: 700;
+}
+
+.placement {
+  background-color: $gray-100;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  padding: 5.3mm 5.3mm 13mm 5.3mm;
+}
+
+.infoBox {
+  display: flex;
+}
+
+.info {
+  flex: 1;
+}
+
+.label {
+  color: $gray-600;
+}
+
+.jobType {
+  text-transform: capitalize;
+}
+
+.footerPlaceholder {
+  opacity: 0;
+}
+
+.footer {
+  padding: 10mm $horSpace 16mm $horSpace;
+  @media screen {
+    padding-bottom: 20mm;
+  }
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media print {
+  $footerHeight: 55mm;
+  .footerPlaceholder {
+    height: $footerHeight;
+  }
+
+  .footer {
+    height: $footerHeight +1mm;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.logButton {
+  padding: 0;
+  margin-bottom: 8mm;
+  border: none;
+  @media print {
+    transform: translateY(-2mm);
+  }
+}
+
+.logo {
+  width: 40mm;
+  margin: 0;
+}
+
+.verStatement {
+  flex: 1 1 auto;
+  font-size: 12px;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.verText {
+  margin-bottom: 8mm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.mainRating {
+  display: flex;
+  margin: $ver-sm 0;
+  font-size: 16px;
+  text-transform: none;
+}
+
+.mainRatingInfo {
+  margin-left: $gap-md;
+  color: $gray-500;
+}
+.subtitle {
+  @include Abel;
+  font-size: 24px;
+}
+.row {
+  flex-direction: row;
+}
+.marginTop {
+  margin-top: 10mm;
+}
+.progressBox {
+  display: flex;
+  justify-content: center;
+}
+.progressContainer {
+  width: 500px;
+}

@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  align-items: flex-start;
+  .inviteInput {
+    margin: 0 $gap-sm 0 0 ;
+  }
+  .submitBox {
+    width: 100px;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+  }
+}
+.invited {
+  margin-top: 10px;
+  color: $success;
+}

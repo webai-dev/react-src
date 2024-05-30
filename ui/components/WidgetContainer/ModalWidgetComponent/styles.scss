@@ -1,0 +1,64 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+$scale: 0.7;
+.modal {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale($scale);
+  transform-origin: 0 50%;
+  z-index: 9000;
+  min-height: 50px;
+  box-sizing: border-box;
+  background-color: $white;
+  box-shadow: $box-shadow-small;
+  animation: fromTop $time;
+  width: 520px;
+  height: 780px;
+  max-height: (1/$scale)*100%;
+  max-width: (1/$scale)*100%;
+  @include mobile($screen-tablet) {
+    //display: none;
+    height: (1/$scale)*100%;
+    width: (1/$scale)*100%;
+    //border-radius: 0;
+    //animation: none;
+  }
+}
+
+.modalVisible {
+  position: absolute;
+}
+
+.box {
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@keyframes fromTop {
+  0% {
+    transform: translateY(-50%) scale($scale) translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-50%) scale($scale) translateX(0);
+    opacity: 1;
+  }
+}
+
+:global {
+  [data-modal] {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,23 @@
+@import "variables";
+:global {
+  .avatar-uploader {
+    display: inline-block;
+    position: relative;
+    .sb-avatar {
+      position: relative;
+    }
+    .camera-icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: -5px;
+      bottom: -5px;
+      width: 30%;
+      height: 30%;
+      background: white;
+      border: 1px rgba($grey, 0.5) solid;
+      border-radius: 360px;
+    }
+  }
+}

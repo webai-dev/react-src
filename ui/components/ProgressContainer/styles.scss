@@ -1,0 +1,70 @@
+.box {
+  z-index: 1;
+  position: relative;
+  margin: $ver-md 0;
+  background-color: $white;
+  @include desktop {
+    padding: 60px 40px;
+  }
+  @include mobile {
+    padding: 30px 20px;
+  }
+  display: flex;
+  align-items: center;
+}
+.mainInfo {
+  flex: 1 0 70%;
+}
+.progressBox {
+  flex: 1 1 30%;
+  display: flex;
+  justify-content: center;
+}
+.goalsBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+.iconBox {
+  flex: 0 0 auto;
+  svg {
+    width: 13px;
+    height: 13px;
+    color: $success;
+    margin-right: $gap-xs;
+  }
+}
+
+body {
+  .help {
+    width: 50%;
+
+    .goal {
+      width: 100%;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  .goal {
+    width: 50%;
+    padding-right: $gap-md;
+    flex: 0 0 auto;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    justify-content: flex-start;
+    color: $black;
+    border: none;
+    align-items: flex-start;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  .goalChecked {
+    color: $gray-500;
+  }
+}

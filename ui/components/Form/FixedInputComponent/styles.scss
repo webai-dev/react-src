@@ -1,0 +1,81 @@
+$line-width: 1px;
+.container {
+  position: relative;
+  width: 100%;
+  @include inputMargin;
+}
+
+.inputBox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+  line-height: 1;
+  border-bottom: $line-width solid transparent;
+}
+
+.label {
+  @include inputLabel();
+}
+
+.input {
+  flex: 1 1 auto;
+  width: 10px;
+  color: $black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: none;
+  border-bottom: 1px dotted $gray-500 !important;
+  outline: none;
+  overflow: hidden;
+  @include mobile {
+    height: 40px;
+    padding: $gap-sm;
+    font-size: 12px;
+  }
+  @include desktop {
+    height: 50px;
+    padding: $gap-md;
+    font-size: 16px;
+  }
+
+  &::placeholder {
+    color: $gray-600;
+  }
+}
+
+.pre,
+.post {
+  display: flex;
+  align-items: center;
+  color: $black;
+  border-bottom: 1px dotted $gray-500 !important;
+  @include mobile {
+    height: 40px;
+    padding: $gap-sm;
+    font-size: 12px;
+  }
+  @include desktop {
+    height: 50px;
+    padding: $gap-md;
+    font-size: 16px;
+  }
+}
+
+.pre {
+  border-right: 1px dotted $gray-500;
+}
+
+.post {
+  border-left: 1px dotted $gray-500;
+}
+
+.multipleLine {
+  height: auto;
+  white-space: pre-wrap;
+  text-overflow: unset;
+}
+
+.placeholder {
+  color: $gray-500;
+}

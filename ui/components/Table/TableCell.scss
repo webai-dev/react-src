@@ -1,0 +1,20 @@
+:global {
+  .table--cell {
+    img {
+      margin-bottom: 0;
+    }
+    &.table--cell__align_center {
+      text-align: center;
+    }
+    &.table--cell__align_right {
+      text-align: right;
+    }
+
+    &.table--cell__valign_center {
+      vertical-align: middle;
+    }
+    &.table--cell__valign_bottom {
+      vertical-align: bottom;
+    }
+  }
+}

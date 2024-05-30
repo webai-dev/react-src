@@ -1,0 +1,29 @@
+.countersBox {
+  display: flex;
+}
+
+.counter {
+  background-color: $gray-100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 33.3%;
+  border-left: 1px solid $white;
+  height: 130px;
+
+  &:last-child {
+    border-right: 1px solid $white;
+  }
+}
+
+.counterValue {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.counterLabel {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: $gray-600;
+}

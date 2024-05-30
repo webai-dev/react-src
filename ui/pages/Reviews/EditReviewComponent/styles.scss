@@ -1,0 +1,41 @@
+body {
+  .modal {
+    max-width: 1024px;
+  }
+
+  .form {
+    @include modalInnerApp;
+  }
+
+  .close {
+    @include modalCloseButtonInnerApp;
+  }
+
+  .title {
+    @include modalInnerAppTitle;
+  }
+
+  .box {
+    display: flex;
+    @include mobile {
+      flex-direction: column;
+    }
+    @include desktop {
+      justify-content: space-between;
+    }
+  }
+
+  .col {
+    @include desktop {
+      flex: 1 1 auto;
+      max-width: 48%;
+    }
+  }
+
+  .submitBox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+}

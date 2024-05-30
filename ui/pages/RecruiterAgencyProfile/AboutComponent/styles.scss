@@ -1,0 +1,21 @@
+body {
+  .box {
+    width: 100%;
+    margin-top: $ver-md;
+    text-align: left;
+  }
+
+  .hiddenMobile {
+    word-break: break-word;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .hiddenDesktop {
+    word-break: break-word;
+    @include desktop {
+      display: none;
+    }
+  }
+}

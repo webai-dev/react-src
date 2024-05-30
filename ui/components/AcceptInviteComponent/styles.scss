@@ -1,0 +1,15 @@
+.form {
+  @include modalInnerApp;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.close {
+  @include modalCloseButtonInnerApp;
+}
+.title {
+  @include modalInnerAppTitle;
+}
+.button {
+  align-self: center;
+}

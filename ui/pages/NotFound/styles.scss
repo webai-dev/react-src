@@ -1,0 +1,20 @@
+body {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttonBox {
+    display: flex;
+    margin-top: $ver-md;
+  }
+
+  .button {
+    margin-right: $gap-md;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

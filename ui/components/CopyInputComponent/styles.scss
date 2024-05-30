@@ -1,0 +1,34 @@
+
+.copyText {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  background: none;
+  border: none;
+  display: inline;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.copyButton {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.copyButtonWithIcon {
+  padding: 0 $gap-xs;
+}

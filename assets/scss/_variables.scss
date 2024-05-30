@@ -1,0 +1,69 @@
+// ========================================
+// IT HAS TO CONTAIN ONLY SCSS VARIABLES!!!
+// ========================================
+$white: #fff;
+$gray-100: #f9f9f8;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #999999;
+$gray-700: #444;
+$gray-800: #333;
+$gray-900: #2b2b2b;
+$black: #000;
+
+$primary: #74b3ce;
+$secondary: $gray-700;
+$accent: #e84778;
+$success: #28a745;
+$info: #1b6083;
+$warning: #f3ad0c;
+$danger: #ff0000;
+$light: $gray-100;
+$light-dark: $gray-600;
+$dark: $gray-900;
+// Please consider not adding new colors and use only above
+$linkedIn: #0073b1;
+$jobAdderColor: #1c7ed6;
+
+// === GAPS AND WIDTHS ===
+$gap-xs: 5px;
+$gap-sm: 10px;
+$gap-md: 15px;
+$gap-lg: 30px;
+$gap-xl: 50px;
+
+$ver-xs: 5px;
+$ver-sm: 10px;
+$ver-md: 20px;
+$ver-lg: 30px;
+$ver-xl: 40px;
+
+$radius-xs: 6px;
+$radius-sm: 10px;
+$radius-md: 15px;
+
+$container-xl: 1280px;
+$container-md: 768px;
+
+// start width it means 500px and higher
+$screen-desktop: 1024px;
+$screen-tablet: 630px;
+
+// === REST ===
+
+$box-shadow: 0 0 30px 0 transparentize($black, 0.9);
+$box-shadow-small: 0 3px 5px transparentize($black, 0.9);
+$box-shadow-dark: 0 0 30px 0 $black;
+
+$border: 1px solid $gray-300;
+
+// === TIMING ===
+$time: 200ms;
+$time-md: 300ms;
+$time-long: 1000ms;
+
+// === SPECIFIC SIZES ===
+$header-internal-height: 64px;
+$navbar-internal-size: 60px;

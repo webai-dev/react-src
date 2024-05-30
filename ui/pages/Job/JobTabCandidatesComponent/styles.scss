@@ -1,0 +1,55 @@
+@import "variables";
+
+:global {
+  .job-application-width--table {
+    width: 100%;
+  }
+
+  .job-application--table {
+    width: 100%;
+
+    .job-application-table--row {
+      transition: all 0.25s linear;
+
+      a {
+        cursor: pointer;
+      }
+
+      .job-application-table--cell--candidate,
+      .job-application-table--cell--recruiter {
+        a {
+          color: $pink;
+        }
+      }
+
+      .job-application-table--cell--image {
+      }
+
+      .job-application-table--cell--title {
+      }
+
+      .job-application-table--cell--count {
+      }
+
+      .job-application-table--cell--status {
+      }
+
+      .job-application-table--cell--actions {
+      }
+    }
+  }
+}
+
+body {
+  .dropDownLabel {
+    @include dropDownButtonLabel
+  }
+
+  .dropDownSelect {
+    @include dropDownSelect
+  }
+
+  .item {
+    @include dropDownItem;
+  }
+}

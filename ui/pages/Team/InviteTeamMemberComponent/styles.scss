@@ -1,0 +1,51 @@
+body {
+  .modal {
+    max-width: 1024px;
+  }
+
+  .form {
+    @include modalInnerApp;
+  }
+
+  .close {
+    @include modalCloseButtonInnerApp;
+  }
+
+  .title {
+    @include modalInnerAppTitle;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  .inviteInput {
+    flex: 0 1 auto;
+    @include desktop {
+      width: calc(50% - #{$gap-md});
+    }
+    @include mobile {
+      width: 100%;
+      margin: $ver-sm 0 0 0;
+    }
+  }
+
+  .submitBox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .marginBottom {
+    margin-bottom: 15px;
+  }
+
+  .warning {
+    color: $danger;
+  }
+}

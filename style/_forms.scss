@@ -1,0 +1,137 @@
+
+:global {
+  #react-select-2-input,
+  #react-select-2-input:focus {
+    border: none !important;
+  }
+  div[contenteditable] {
+    height: auto !important;
+  }
+  select.form-control:focus {
+    background-color: transparent;
+  }
+
+  input.form-control,
+  .Select {
+    background-color: #f5f5f5;
+  }
+  input.form-control,
+  .select-wrapper {
+    background-color: #f5f5f5;
+  }
+  .select-wrapper select,
+  .input-group input {
+    border: 1px solid #d7d2cb;
+  }
+  .input-group input {
+    border: 1px solid #d7d2cb;
+  }
+  .input-group input.form-control[type="number"] {
+    text-align: right;
+  }
+  // hacky overrides
+  .Select-control {
+    height: 46px;
+  }
+  html body .Select {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+  }
+
+  textarea {
+    background-color: #f5f5f5;
+    padding: 15px;
+    line-height: 24px !important;
+    width: 100%;
+    resize: none;
+    border: none;
+  }
+
+  // hacky overrides
+  html body .select-wrapper {
+    height: 46px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    select {
+      position: relative;
+      z-index: 1;
+      background: transparent;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      text-indent: 0.01px;
+      text-overflow: "";
+      height: 46px;
+      color: #fff;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 300;
+      padding: 10px 36px 10px 15px;
+      color: #575f65;
+      width: 100%;
+      outline: 0;
+      height: 100%;
+    }
+    &:after {
+      position: absolute;
+      top: 40%;
+      right: 12px;
+      z-index: 0;
+      content: "";
+      margin-left: 6px;
+      display: inline-block;
+      border-top: 8px solid #575f65;
+      border-right: 7px solid transparent;
+      border-bottom: none;
+      border-left: 7px solid transparent;
+    }
+  }
+
+  .verify-email-alert {
+    p,
+    h4 {
+      color: white !important; // -.-
+    }
+    .email-icon {
+      margin-bottom: 0;
+      width: 60px;
+      float: left;
+      margin-top: 2px;
+      margin-right: 5px;
+      margin-left: -12px;
+    }
+  }
+  .status-filter {
+    margin-right: -20px;
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+    .select-wrapper {
+      max-width: 170px;
+      margin-right: 20px;
+      margin-left: 20px;
+      height: 100%;
+      flex: 1 1 100%;
+      select {
+        height: 100%;
+      }
+    }
+  }
+  .calendar-input-selector input {
+    cursor: pointer !important;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+  }
+}

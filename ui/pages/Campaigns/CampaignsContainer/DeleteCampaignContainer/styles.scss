@@ -1,0 +1,21 @@
+body {
+  .form {
+    @include modalInnerApp;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .close {
+    @include modalCloseButtonInnerApp;
+  }
+
+  .title {
+    @include modalInnerAppTitle;
+  }
+
+  .item {
+    @include dropDownItem;
+  }
+}

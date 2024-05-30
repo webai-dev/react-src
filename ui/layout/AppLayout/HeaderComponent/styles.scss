@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-internal-height;
+  padding-right: $gap-md;
+  color: $white;
+  background-color: $dark;
+  grid-area: header;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.logoButton {
+  align-self: center;
+}
+.logo {
+  margin-bottom: 0; // @TODO remove it when no bootstrap
+  @include mobile(400px) {
+    width: 80px;
+  }
+  @include desktop(400px) {
+    width: 140px;
+  }
+}
+.actions {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}

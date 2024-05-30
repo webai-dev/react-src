@@ -1,0 +1,36 @@
+.previewButton {
+  margin-right: $gap-md;
+}
+
+.form {
+  display: flex;
+  background-color: $white;
+  @include mobile {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 30px 20px;
+  }
+  @include desktop {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 60px 40px;
+  }
+}
+
+.mainInfoBox {
+  flex: 1 0 auto;
+  @include desktop {
+    max-width: 30%;
+  }
+}
+
+.additionalInfoBox {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  align-items: stretch;
+  @include desktop {
+    max-width: calc(70% - 30px);
+    margin-left: 30px;
+  }
+}

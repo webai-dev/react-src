@@ -1,0 +1,24 @@
+.lock {
+  cursor: pointer;
+  display: inline-block;
+}
+.modal {
+  max-width: 840px;
+}
+.box {
+  @include modalInnerApp;
+}
+.close {
+  @include modalCloseButtonInnerApp;
+}
+.title {
+  @include modalInnerAppTitle;
+  svg {
+    width: 25px;
+  }
+}
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  margin-top: $ver-md;
+}

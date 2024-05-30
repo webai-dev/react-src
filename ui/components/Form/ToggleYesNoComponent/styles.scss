@@ -1,0 +1,28 @@
+.box {
+  display: flex;
+  align-items: center;
+}
+.switchBox {
+  display: flex;
+}
+
+.switchButton {
+  margin: 0;
+
+  &:first-child {
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+}
+.label {
+  margin-left: $gap-md;
+}

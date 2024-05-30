@@ -1,0 +1,15 @@
+.box {
+  flex: 0 0 auto;
+  min-width: 25px;
+  min-height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    margin: 0 !important;
+  }
+}

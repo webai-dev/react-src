@@ -1,0 +1,118 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+
+  :global {
+    #app {
+      display: grid;
+      flex: 1 0 auto;
+      min-height: 100vh;
+      overflow-x: hidden;
+      white-space: pre-wrap;
+      background-color: $gray-100;
+      @include mobile {
+        grid-template-columns: auto;
+        grid-template-rows: $header-internal-height 0 0 auto 200px $navbar-internal-size;
+        grid-template-areas: "header" "toastify" "infoBox" "main" "footer" "navbar";
+      }
+      @include desktop {
+        grid-template-columns: $navbar-internal-size auto;
+        grid-template-rows: $header-internal-height 0 auto 350px;
+        grid-template-areas: "header header" "navbar toastify" "navbar main" "navbar footer";
+      }
+    }
+
+    .Toastify {
+      z-index: 11;
+      position: relative;
+      width: 100%;
+      grid-area: toastify;
+    }
+
+    // check http://sourcr-cactus.s3-website-us-east-1.amazonaws.com/job.html for h2 h3 and h5
+    // (it is h4 on that page but h5 is better because...
+    // h4 is here http://sourcr-cactus.s3-website-us-east-1.amazonaws.com/recruiter-placement-add.html
+    // it is called h5 but I believe h5 font-size should be < h4 font size
+    a, button, h2, h3, h4, h5, .formsySubmit {
+      @include Montserrat;
+    }
+
+    h2 { // @TODO remove !important when no bootstrap
+      // IMPORTANT has clone here app/assets/app/ui/layout/LoginLayout/styles.scss
+      color: $gray-800 !important;
+      font-size: 30px !important;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    h3 { // @TODO remove !important when no bootstrap
+      // IMPORTANT has clone here app/assets/app/ui/layout/LoginLayout/styles.scss
+      color: $accent !important;
+      font-size: 20px !important;
+    }
+
+    h4 { // @TODO remove !important when no bootstrap
+      // IMPORTANT has clone here app/assets/app/ui/layout/LoginLayout/styles.scss
+      color: $black !important;
+      font-size: 20px !important;
+      text-transform: uppercase !important;
+    }
+
+    h5 { // @TODO remove !important when no bootstrap
+      // IMPORTANT has clone here app/assets/app/ui/layout/LoginLayout/styles.scss
+      color: $black !important;
+      font-size: 18px !important;
+    }
+  }
+}
+
+.toastifyContainer {
+  @include mobile {
+    top: auto;
+    bottom: $navbar-internal-size;
+    left: 0;
+    width: 100%;
+  }
+  @include desktop {
+    top: $header-internal-height;
+    left: $navbar-internal-size;
+    width: calc(100% - #{$navbar-internal-size});
+  }
+}
+
+.main {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  grid-area: main;
+  @include mobile {
+    padding: $ver-sm $gap-sm 170px $gap-sm;
+  }
+  @include desktop {
+    align-self: stretch;
+    max-width: 1275px;
+    padding: 36px $gap-md 170px $gap-md;
+    justify-self: center;
+  }
+}
+
+.alertBox {
+  margin: $ver-md $gap-md;
+}
+
+.pageContent {
+  padding: $ver-md 0;
+  @include mobile {
+    min-height: 400px;
+  }
+  @include desktop {
+    min-height: 300px;
+  }
+}
+
+.pendingApproval {
+  padding: $ver-md $gap-md;
+}

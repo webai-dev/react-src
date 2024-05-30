@@ -1,0 +1,158 @@
+$line-width: 1px;
+.container {
+  position: relative;
+  width: 100%;
+  margin: $gap-sm 0;
+  :global {
+    .DraftEditor-root {
+      @include OpenSans;
+    }
+  }
+}
+
+.inputBox {
+  display: flex;
+  position: relative;
+  font-size: 16px;
+  border-bottom: $line-width solid transparent;
+  word-break: break-word;
+  .input {
+    border: none !important; // @TODO remove it when no bootstrap
+  }
+}
+
+.activeLine {
+  &::after,
+  &::before {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: $line-width;
+    background-color: $accent;
+    content: '';
+    transition: width ease-out $time;
+  }
+  &::after {
+    left: 50%;
+  }
+  &::before {
+    right: 50%;
+  }
+}
+
+.label {
+  @include inputLabel();
+}
+
+.required {
+  margin-left: $gap-xs;
+  color: $danger;
+}
+
+.input {
+  flex: 1 1 auto;
+  padding: $ver-sm $gap-md;
+  color: $black;
+  background-color: $gray-100 !important;
+  border: none;
+  outline: none;
+  @include mobile {
+    min-height: 70px;
+    padding: $gap-sm;
+    font-size: 12px;
+  }
+  @include desktop {
+    min-height: 100px;
+    padding: $gap-md;
+    font-size: 16px;
+  }
+  button[title="Link"] {
+    &:focus,
+    &:hover {
+      &:after {
+        content: 'insert full link e.g. https://www.sourcr.com';
+        @include hint;
+        position: absolute;
+        pointer-events: none;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+        z-index: 10;
+      }
+    }
+  }
+}
+
+@keyframes opaque {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.error {
+  display: block;
+  left: 0;
+  color: $danger;
+  font-size: 12px;
+  animation: opaque $time ease-out both;
+}
+
+.containerActive {
+  .activeLine {
+    &::after,
+    &::before {
+      width: 50%;
+    }
+  }
+}
+
+.containerLabelActive {
+  // change styles when input is active
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.containerError {
+  .inputBox {
+    border-bottom: 1px $danger solid;
+    transform: translate3d(0, 0, 0);
+    animation: shake $time-long cubic-bezier(.36, .07, .19, .97) both;
+  }
+  :global {
+    .public-DraftEditorPlaceholder-inner {
+      color: $danger;
+    }
+  }
+}
+.containerTransparent {
+  .input {
+    background-color: transparent;
+    border: $border !important;// @TODO remove it when no bootstrap
+    border-radius: 3px;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

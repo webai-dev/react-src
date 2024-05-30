@@ -1,0 +1,21 @@
+body {
+  .box {
+    flex: 1;
+    @include mobile {
+      margin-top: $ver-sm;
+    }
+    @include desktop {
+      margin-left: $gap-lg;
+    }
+  }
+
+  .resultTitle {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .searchBox {
+    margin: $ver-md 0;
+  }
+}

@@ -1,0 +1,70 @@
+
+.avatar {
+  flex: 0 0 auto;
+  width: 35px;
+  height: 35px;
+}
+.dropDownSelect {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  min-height: 30px;
+  color: $black;
+  background-color: $white;
+  box-shadow: $box-shadow;
+}
+.readAll {
+  margin: 0;
+  border-radius: 0;
+}
+.dropDownLabel {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  padding: 0 12px;
+  color: inherit;
+  background-color: transparent;
+  border: 1px solid transparent !important;
+  cursor: pointer;
+  transition: border-color $time ease-out;
+
+  svg {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+  }
+  &:focus {
+    outline: none;
+    svg {
+      color: $accent;
+    }
+  }
+}
+.dropDownLabelDev {
+  color: $accent;
+}
+.bell {
+  svg {
+    color: $gray-500;
+    transition: color $time ease-out;
+  }
+  &:hover {
+    svg {
+      color: $gray-300;
+    }
+  }
+  &:focus {
+    svg {
+      color: $white;
+    }
+  }
+}
+.noNotifications {
+  padding: 10px;
+  text-align: center;
+}
+.devFeatureActive {
+  background-color: $success;
+}

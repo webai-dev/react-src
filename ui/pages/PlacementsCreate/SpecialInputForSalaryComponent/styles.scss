@@ -1,0 +1,26 @@
+body {
+  .salaryLabel {
+    flex: 1 1 auto;
+  }
+
+  .salarySelect {
+    @include hint;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all $time ease-out;
+  }
+
+  .salarySelectVisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .input {
+    margin: 0;
+  }
+
+  .container {
+    @include inputMargin;
+  }
+}

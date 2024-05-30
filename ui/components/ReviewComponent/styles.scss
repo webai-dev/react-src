@@ -1,0 +1,92 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.date {
+  flex: 0 0 auto;
+  margin-left: $gap-md;
+  color: $gray-500;
+  font-size: 12px;
+}
+
+.text {
+  margin-top: $ver-sm;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  @include desktop {
+    max-width: 57vw !important;
+  }
+  @include desktop(1000px) {
+    max-width: 67vw !important;
+  }
+
+  @include mobile {
+    max-width: 90vw !important;
+  }
+  @include mobile($screen-tablet) {
+    max-width: 82vw !important;
+  }
+}
+
+.reviewer {
+  margin-top: $ver-sm;
+  font-weight: 700;
+}
+
+.reviewAction {
+  margin: $ver-md 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: $box-shadow;
+  }
+}
+
+.reviewInnerApp {
+  .text {
+    margin-top: $ver-md;
+    @include desktop {
+      max-width: 42vw !important;
+    }
+    @include desktop(1000px) {
+      max-width: 52vw !important;
+    }
+
+    @include mobile {
+      max-width: 80vw !important;
+    }
+    @include mobile($screen-tablet) {
+      max-width: 67vw !important;
+    }
+  }
+}
+
+.ratingBox {
+  display: flex;
+}
+
+.ratingText {
+  color: $gray-500;
+  font-size: 12px;
+}
+.title {
+  flex: 1 1 auto;
+  width: 100px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

@@ -1,0 +1,33 @@
+$backgroundImageWidthToHeightRatio: 3.8;
+body {
+  .box {
+    @include colBox;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    @include col;
+  }
+
+  .vars {
+    flex: 1 1 100%
+  }
+
+  .marginBottom {
+    margin-bottom: 15px;
+  }
+
+  .itemsBox {
+    display: flex;
+    align-items: center;
+  }
+
+  .button {
+    margin: 0 $gap-sm 0 0;
+  }
+
+  .submitButtons {
+    justify-content: flex-end;
+    margin-top: $ver-lg;
+  }
+}

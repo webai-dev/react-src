@@ -1,0 +1,80 @@
+body {
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 50px;
+    text-align: center;
+    background-color: $white;
+    @include desktop {
+      width: 400px;
+    }
+
+
+    .linkedIn {
+      display: inline-flex;
+      flex: 1 1 auto;
+      justify-content: flex-start;
+      margin-top: $ver-md;
+      padding: 0 $gap-md 0 0;
+      color: $white;
+      text-transform: none;
+      background-color: $linkedIn;
+      border: none;
+      @include desktop(385px) {
+        max-width: 260px;
+      }
+      @include desktop(768px) {
+        max-width: none;
+      }
+      @include desktop(1275px) {
+        max-width: 260px;
+      }
+
+      &:focus,
+      &:hover {
+        color: $white;
+        background-color: $linkedIn;
+      }
+    }
+  }
+
+  .linkedInIcon {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    padding: 0 $gap-md;
+    border-right: 1px solid $white;
+    @include mobile {
+      height: 40px;
+    }
+    @include desktop {
+      height: 50px;
+    }
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  .error {
+    margin: $ver-sm 0;
+    color: $danger;
+  }
+
+  .form {
+    align-self: stretch;
+  }
+
+  .orBox {
+    margin-top: $ver-sm;
+  }
+
+  .submit {
+    @include Abel;
+  }
+
+  .forgot {
+    margin-top: $ver-sm;
+  }
+}

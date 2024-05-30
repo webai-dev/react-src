@@ -1,0 +1,121 @@
+.text {
+  margin-top: $ver-md;
+}
+
+.header {
+  display: flex;
+  @include desktop($screen-tablet) {
+    align-items: flex-start;
+  }
+  @include mobile($screen-tablet) {
+    align-items: flex-end;
+  }
+  justify-content: space-between;
+  margin-bottom: 20px !important;
+  margin-top: 0 !important;
+}
+
+.date {
+  flex: 0 0 auto;
+  margin-left: $gap-md;
+  color: $gray-500;
+  font-size: 14px;
+}
+
+.title {
+  margin-bottom: 0 !important;
+}
+
+.subTitle {
+  margin-top: 30px !important;
+}
+
+.reviewer {
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  margin: $ver-sm 0;
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin: $ver-sm 0;
+  @include mobile {
+    justify-content: space-between;
+    max-width: 300px;
+  }
+}
+
+.titleSmall {
+  @include h4;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.label {
+  color: $gray-500;
+}
+
+.highlight {
+  font-weight: 700;
+}
+
+.accent {
+  color: $accent
+}
+
+.reviewInnerApp {
+  flex-direction: column;
+  align-items: center;
+
+  @include modalInnerApp;
+
+  .close {
+    @include modalCloseButtonInnerApp;
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .header {
+    @include modalInnerAppTitle;
+    padding-left: 0 !important;
+  }
+}
+
+.reviewOuterApp {
+  display: block;
+  flex-direction: column;
+  margin: 0;
+  @include desktop($screen-tablet) {
+    padding: 45px;
+  }
+  @include mobile($screen-tablet) {
+    padding: 25px 15px;
+  }
+  border: none;
+  cursor: default;
+
+  .close {
+    min-height: 35px;
+    padding: 0 $gap-sm;
+    display: flex;
+    position: absolute;
+    top: $gap-md;
+    right: $gap-md;
+  }
+}

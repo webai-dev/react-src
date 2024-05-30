@@ -1,0 +1,50 @@
+body {
+  .box {
+    flex: 1;
+    @include desktop {
+      max-width: 30%;
+    }
+  }
+
+  .title {
+    margin: $ver-md 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include mobile {
+      cursor: pointer;
+    }
+  }
+
+  .dropIcon {
+    @include desktop {
+      display: none;
+    }
+
+    svg {
+      transition: transform $time ease-out;
+      transform: translateY(1px) rotate(-180deg);
+    }
+  }
+
+  .dropIconOpen {
+    svg {
+      transform: translateY(3px) rotate(0deg);
+    }
+  }
+
+  .filters {
+    @include mobile {
+      display: none;
+    }
+    @include desktop {
+      display: block;
+    }
+  }
+
+  .filtersOpen {
+    display: block;
+  }
+}

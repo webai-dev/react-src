@@ -1,0 +1,42 @@
+$size-md: 12px;
+$size-lg: 17px;
+.status {
+  flex: 0 0 auto;
+  width: $size-md;
+  height: $size-md;
+  margin: 0 $gap-xs;
+  &:first-child {
+    margin-left: 0;
+  }
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid $gray-500;
+  border-radius: 50%;
+  transition: border $time ease-out, background-color $time ease-out;
+  display: inline-block;
+}
+
+.statusBig {
+  width: $size-lg;
+  height: $size-lg;
+}
+
+.statusSuccess {
+  background-color: $success;
+  border-color: $success;
+}
+
+.statusWarning {
+  background-color: $warning;
+  border-color: $warning;
+}
+
+.statusDanger {
+  background-color: $danger;
+  border-color: $danger;
+}
+
+.statusHighlight {
+  background-color: $primary;
+  border-color: $primary;
+}

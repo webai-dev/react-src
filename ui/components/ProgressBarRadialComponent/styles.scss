@@ -1,0 +1,76 @@
+:export {
+  colorEmpty: $gray-200;
+  colorFill: $accent;
+}
+.donut {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 5px;
+  background: $gray-200;
+}
+
+.one,
+.two {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.one {
+  background: $accent;
+}
+
+.center {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: $accent;
+}
+
+
+$size: 82px;
+$width: $size;
+$height: $size;
+.donut {
+  width: $width;
+  height: $height;
+  .one {
+    clip: rect(0 $width $height $width/2); // 0% === 1/0 -180/0; 50% === 1/0 0/0
+  }
+  .two {
+    clip: rect(0 $width/2 $height 0);
+  }
+  .center {
+    width: $width/2.2;
+    height: $height/2.2;
+  }
+}
+$sizeBig: 160px;
+$widthBig:$sizeBig;
+$heightBig: $sizeBig;
+
+.donutBig {
+  width: $widthBig;
+  height: $heightBig;
+  .one {
+    clip: rect(0 $widthBig $heightBig $widthBig/2); // 0% === 1/0 -180/0; 50% === 1/0 0/0
+  }
+  .two {
+    clip: rect(0 $widthBig/2 $heightBig 0);
+  }
+  .center {
+    width: $widthBig/1.4;
+    height: $heightBig/1.4;
+    font-size: 18px;
+  }
+}

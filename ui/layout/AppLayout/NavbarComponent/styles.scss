@@ -1,0 +1,47 @@
+$desktop-bar-width: 220px;
+.navbar {
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  color: $white;
+  background-color: $dark;
+  grid-area: navbar;
+  @include desktop {
+    top: $header-internal-height;
+    width: $desktop-bar-width;
+    height: calc(100vh - #{$header-internal-height});
+    border-right: $border;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: transform $time ease-out;
+    transform: translateX(-#{$desktop-bar-width - $navbar-internal-size});
+    &:hover {
+      transform: translateX(0);
+      .navbarBox {
+        transform: translateX(0);
+      }
+    }
+  }
+  @include mobile {
+    bottom: 0;
+    width: 100%;
+    height: $navbar-internal-size;
+    border-top: $border;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+.navbarBox {
+  display: flex;
+  align-items: stretch;
+  @include desktop {
+    flex-direction: column;
+    width: $desktop-bar-width;
+    height: 100%;
+    transition: transform $time ease-out;
+    transform: translateX(#{$desktop-bar-width - $navbar-internal-size});
+  }
+}
+.filler {
+  flex: 1 1 auto;
+}

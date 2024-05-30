@@ -1,0 +1,18 @@
+@import "variables";
+:global {
+  .filter-row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #page-tab-panel-job-description {
+
+    .job-application-modal {
+      .candidate--linkedin-url {
+        display: block;
+        position: absolute;
+        top: -80px;
+        left: 10px;
+      }
+    }
+  }
+}

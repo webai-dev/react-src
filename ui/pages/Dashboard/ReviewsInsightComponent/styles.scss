@@ -1,0 +1,157 @@
+body {
+  .row {
+    display: flex;
+    @include mobile(1100px) {
+      flex-direction: column;
+    }
+    @include desktop(1100px) {
+      align-items: flex-start;
+    }
+    margin: $ver-md 0;
+  }
+
+  .cardBox {
+    flex: 1 1 50%;
+
+    @include desktop(1100px) {
+      margin: 0 $gap-md;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    @include mobile(1100px) {
+      margin-bottom: $ver-md;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .card {
+    background-color: $white;
+    padding: 40px;
+    margin: $ver-md 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .countersBox {
+    display: flex;
+  }
+
+  .counter {
+    background-color: $gray-100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 50%;
+    border-left: 1px solid $white;
+    height: 130px;
+
+    &:last-child {
+      border-right: 1px solid $white;
+    }
+  }
+
+  .counterValue {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .counterLabel {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: $gray-600;
+  }
+
+  .pendingTitle {
+    margin: 40px 0 30px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .titleSpaced {
+    justify-content: space-between;
+  }
+
+  .googleTitle {
+    flex-wrap: wrap;
+
+    svg {
+      width: 25px;
+      transform: translateY(-2px);
+    }
+  }
+
+  .inlineButton {
+    display: inline-flex;
+  }
+
+  .info {
+    word-break: break-all;
+  }
+
+  .mainRating {
+    display: flex;
+    margin: $ver-sm 0;
+    flex: 1 1 100%;
+    font-size: 16px;
+    text-transform: none;
+  }
+
+  .mainRatingInfo {
+    margin-left: $gap-md;
+    color: $gray-500;
+  }
+
+  .select {
+    flex: 1 1 auto;
+    max-width: 250px;
+    margin-bottom: $ver-md;
+  }
+
+  .review {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    border-top: 1px solid $gray-100;
+
+    &:last-child {
+      border-bottom: 1px solid $gray-100;
+    }
+
+    @include mobile {
+      padding: $ver-sm 0;
+      flex-wrap: nowrap;
+    }
+    @include desktop {
+      padding: $ver-md 0;
+    }
+    font-size: 12px;
+  }
+
+  .reviewInfo {
+    font-size: 14px;
+    margin-top: $ver-md;
+    margin-bottom: $ver-sm;
+  }
+
+  .postedDate {
+    margin-left: $gap-xs;
+    color: $gray-500;
+  }
+
+  .googleConnect {
+    margin-bottom: $ver-md;
+  }
+}

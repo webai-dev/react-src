@@ -1,0 +1,15 @@
+body {
+  .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px;
+    font-size: 24px;
+  }
+
+  .close {
+    position: absolute;
+    top: 18px;
+    right: 13px;
+  }
+}

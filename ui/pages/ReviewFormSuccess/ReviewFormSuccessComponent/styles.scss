@@ -1,0 +1,26 @@
+body {
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .text {
+    margin-bottom: $ver-md;
+    text-align: center;
+  }
+
+  .button {
+    margin-bottom: $ver-md;
+  }
+
+  .faq {
+    text-transform: none;
+  }
+}

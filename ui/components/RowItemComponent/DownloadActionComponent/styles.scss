@@ -1,0 +1,15 @@
+body {
+  .actionBox {
+    color: $primary;
+
+    &:focus,
+    &:hover {
+      color: $primary;
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}

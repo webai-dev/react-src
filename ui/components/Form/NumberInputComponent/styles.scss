@@ -1,0 +1,181 @@
+:export {
+  $color: $accent;
+}
+.rateContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.rateBox {
+  display: flex;
+  flex-direction: column;
+}
+.labelsBox {
+  display: flex;
+  padding: 0 $gap-md
+}
+.labels {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rateButtons {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.isError {
+  animation: shake $time-long cubic-bezier(.36, .07, .19, .97) both;
+
+  .item {
+    border-color: $danger;
+  }
+}
+
+.required {
+  @include inputRequired()
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.row {
+  .item {
+    @include desktop($screen-tablet) {
+      width: 36px;
+      height: 36px;
+    }
+    @include mobile($screen-tablet) {
+      width: 24px;
+      height: 24px;
+      font-size: 10px;
+    }
+    background-color: transparent;
+    cursor: pointer;
+    border: $border;
+    border-right: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $accent;
+    transition: border-color $time ease-out, background-color $time ease-out, color $time ease-out;
+    border-radius: 0 !important; // @todo remove !important when no bootstrap
+    &:first-child {
+      border-bottom-left-radius: 4px !important; // @todo remove !important when no bootstrap
+      border-top-left-radius: 4px !important; // @todo remove !important when no bootstrap
+    }
+
+    &:last-child {
+      border-right: $border;
+      border-bottom-right-radius: 4px !important; // @todo remove !important when no bootstrap
+      border-top-right-radius: 4px !important; // @todo remove !important when no bootstrap
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $accent;
+      background-color: $accent;
+      color: $white;
+    }
+  }
+
+  .itemActive {
+    border-color: $accent;
+    background-color: $accent;
+    color: $white;
+    cursor: default;
+  }
+
+  .isError {
+    .item {
+      border-color: $danger;
+      border-width: 3px;
+      color: $danger;
+      &:hover,
+      &:focus {
+        border-color: $accent;
+        background-color: $accent;
+        color: $white;
+      }
+    }
+  }
+}
+$sizeRound: 55px;
+$sizeRoundMobile: 40px;
+.round {
+  .labelsBox {
+    justify-content: center;
+  }
+  .labels {
+    flex: 0 0 auto;
+  }
+  .rateButtons {
+    flex-wrap: wrap;
+    justify-content: center;
+    @include desktop($screen-tablet) {
+      width: 360px;
+    }
+    @include mobile($screen-tablet) {
+      width: 270px;
+    }
+  }
+  .item {
+    @include desktop($screen-tablet) {
+      width: $sizeRound;
+      height: $sizeRound;
+    }
+    @include mobile($screen-tablet) {
+      width: $sizeRoundMobile;
+      height: $sizeRoundMobile;
+      font-size: 12px;
+    }
+    background-color: $accent;
+    cursor: pointer;
+    border: 1px solid $accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white !important;
+    transition: border-color $time ease-out, background-color $time ease-out, color $time ease-out;
+    border-radius: 50% !important; // @todo remove !important when no bootstrap
+    margin: 0 2px;
+
+    &:hover,
+    &:focus {
+      background-color: transparent !important;
+      color: inherit !important;
+    }
+  }
+
+  .itemActive {
+    background-color: transparent !important;
+    color: inherit !important;
+    cursor: default;
+  }
+
+  .isError {
+    .item {
+      background-color: $danger;
+    }
+  }
+}
+
+.error {
+  @include inputError();
+}

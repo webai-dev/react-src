@@ -1,0 +1,76 @@
+:export {
+  promoter: rgb(92,184,92);
+  passive: rgb(240,173,78);
+  detractor: rgb(217,83,79);
+}
+
+.promoterBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.progressBar {
+  position: relative;
+  width: 240px;
+  flex: 0 0 auto;
+
+  text {
+    color: #666666;
+    font-size: 11px;
+    fill: #666666;
+  }
+}
+.score {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.scoreNumber {
+  font-weight: 500;
+  font-size: 25px;
+}
+.scoreText {
+  font-size: 12px;
+}
+.additionalInfo {
+  margin-top: $ver-sm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include Montserrat;
+  font-weight: 500;
+}
+
+.promoterText,
+.passiveText,
+.detractorText {
+  display: block;
+  margin: $ver-xs 0;
+  font-size: 18px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.promoterText {
+  color: $success;
+}
+
+.passiveText {
+  color: $warning;
+}
+
+.detractorText {
+  color: $danger;
+}

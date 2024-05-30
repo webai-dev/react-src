@@ -1,0 +1,17 @@
+.link {
+  color: inherit;
+  text-decoration: underline;
+  border: none;
+  transform: none;
+  &:focus,
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+.box {
+  svg {
+    transform: translateY(2px);
+    margin-right: $gap-xs;
+  }
+}

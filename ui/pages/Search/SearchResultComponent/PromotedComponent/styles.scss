@@ -1,0 +1,76 @@
+:export {
+  duration: 650;
+  interval: 5500;
+}
+
+$margin: 25px;
+body {
+  .promotionBox {
+    @include mobile {
+      display: none;
+    }
+    position: fixed;
+    bottom: $margin;
+    left: $margin;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    width: 400px;
+  }
+
+  .reviewBox {
+    display: flex;
+    padding: 10px 25px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    margin-right: $gap-xs;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 275px;
+    flex: 1 1 auto;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .locationInfo {
+    color: $gray-600;
+    font-size: 14px;
+
+    svg {
+      width: 15px;
+      transform: translateY(2px);
+    }
+  }
+
+  .locationInfo,
+  .title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: $ver-xs
+  }
+
+  $line-height: 18px;
+  $lines: 2;
+
+  .review {
+    font-size: 14px;
+    line-height: $line-height;
+    display: -webkit-box;
+    max-height: $lines * $line-height;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+    margin-bottom: $ver-xs;
+    height: $line-height*$lines;
+  }
+}

@@ -1,0 +1,25 @@
+body {
+  .label {
+    color: $gray-500;
+  }
+
+  .buttons {
+    margin-right: $gap-md;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .start {
+    @include desktop {
+      flex: 0 1 35%;
+    }
+  }
+
+  .middle {
+    @include desktop {
+      flex: 0 1 auto
+    }
+  }
+}

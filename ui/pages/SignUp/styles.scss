@@ -1,0 +1,63 @@
+body {
+  .box {
+    padding: 20px 50px;
+    background-color: $white;
+    @include desktop {
+      min-width: 600px;
+    }
+  }
+
+  .title {
+    margin-bottom: $ver-lg;
+    text-align: center;
+  }
+
+  .label {
+    font-weight: 700;
+  }
+
+  .nameBox {
+    display: flex;
+  }
+
+  .nameInput {
+    &:first-child {
+      margin-right: $gap-sm;
+    }
+
+    &:last-child {
+      margin-left: $gap-sm;
+    }
+  }
+
+  .submit {
+    width: 100%;
+  }
+
+  .borderButton {
+    border: 1px solid $accent;
+  }
+
+  .danger {
+    color: $danger;
+  }
+
+  .buttonBox {
+    display: flex;
+    margin-top: $ver-lg;
+  }
+
+  .button {
+    @include Abel;
+    flex: 0 0 auto;
+    width: auto;
+
+    &:first-child {
+      margin-right: $gap-sm;
+    }
+
+    &:last-child {
+      margin-left: $gap-sm;
+    }
+  }
+}

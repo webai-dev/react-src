@@ -1,0 +1,36 @@
+.navLink {
+  display: flex;
+  align-items: center;
+  min-height: 45px;
+  color: $black;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  transition: border $time ease-out, color $time ease-out;
+  @include mobile {
+    padding: 0 $gap-md;
+  }
+  @include desktop {
+    padding: 0 20px;
+    border-bottom-width: 3px;
+  }
+  &:hover,
+  &:focus {
+    color: $accent;
+  }
+}
+.navLinkActive {
+  color: $black;
+  border-color: $accent;
+}
+.badge {
+  margin-left: $gap-sm;
+  color: $white;
+}
+.helpBox {
+  padding-right: 0;
+}
+.help {
+  color: $black;
+  width: 400px;
+  text-transform: none;
+}

@@ -1,0 +1,14 @@
+
+:global {
+  .nav-link svg.fa-bell {
+    font-size: 26px;
+  }
+  .dropdown-toggle {
+    &.nav-link {
+      margin-top: 5px;
+    }
+    &::after {
+      vertical-align: 0.355em;
+    }
+  }
+}

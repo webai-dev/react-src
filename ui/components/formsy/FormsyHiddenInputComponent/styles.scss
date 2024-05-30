@@ -1,0 +1,7 @@
+.error {
+  display: block;
+  left: 0;
+  color: $danger;
+  font-size: 12px;
+  animation: opaque $time ease-out both;
+}

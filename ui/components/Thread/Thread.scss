@@ -1,0 +1,31 @@
+@import "variables";
+:global {
+  .message-thread {
+    .message-thread--list {
+      max-height: 52vh;
+      margin-left: 0;
+      padding-left: 0;
+      overflow-y: scroll;
+    }
+    .message-thread--new {
+      display: flex;
+    }
+  }
+  .thread-message {
+    margin: 10px 0;
+    border-bottom: 1px solid $light-grey;
+    &.thread-message__other-message {
+    }
+    .thread-message--profile-snippet {
+    }
+    .thread-message--content {
+      padding: 10px;
+    }
+    .thread-message--posted-by {
+    }
+    .thread-message--posted-at {
+      color: $grey;
+      font-size: 9pt;
+    }
+  }
+}

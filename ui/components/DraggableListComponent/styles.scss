@@ -1,0 +1,18 @@
+.csvItem {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.csvItem {
+  width: 100%;
+  border: $border;
+  padding: 0 15px;
+  cursor: move;
+}
+.hidden {
+  opacity: 0;
+}

@@ -1,0 +1,21 @@
+@import "variables";
+:global {
+  .marketplace-job--table {
+    width: 100%;
+    .marketplace-job-table--row {
+      &.marketplace-job-table--row__rejected {
+        background: rgba(red, 0.2);
+      }
+      &.marketplace-job-table--row__engaged {
+        background: rgba($green, 0.2);
+      }
+    }
+  }
+}
+.pointer {
+  cursor: pointer;
+}
+
+.location {
+  color: $gray-500;
+}

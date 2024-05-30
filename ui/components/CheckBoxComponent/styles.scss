@@ -1,0 +1,133 @@
+.container {
+  position: relative;
+  @include inputMargin;
+}
+
+.labelBox {
+  display: flex;
+  align-items: center;
+  margin: 0; // @TODO remove when no bootstrap
+  opacity: 1 !important; // @TODO remove when no bootstrap
+  cursor: pointer;
+
+  &:hover {
+    .checkBox {
+      border: 2px solid $accent;
+    }
+
+    .label {
+      color: $accent;
+    }
+  }
+}
+
+.checkBox {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-right: $gap-sm;
+  color: transparent;
+  border: 1px solid $gray-500;
+  transition: border $time ease-out, background-color $time ease-out;
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.checkBoxActive {
+  color: $white;
+  background-color: $accent;
+  border: 2px solid $accent;
+}
+
+.label {
+  color: $black;
+  font-size: 14px;
+  @include OpenSans;
+  text-transform: none;
+  transition: color $time ease-out;
+}
+
+.input {
+  position: absolute;
+  top: 30%;
+  pointer-events: none;
+  opacity: 0;
+
+  &:active {
+    & + .labelBox {
+      transform: translateY(1px);
+    }
+  }
+
+  &:focus {
+    & + .labelBox {
+      .checkBox {
+        border: 2px solid $accent;
+      }
+
+      .label {
+        color: $accent;
+      }
+    }
+  }
+}
+
+.checkBoxNoText {
+  margin-right: 0;
+}
+
+.innerAppBox {
+  input:focus + .labelBox {
+    &:hover {
+      .checkBox {
+        border: 2px solid $primary;
+      }
+    }
+  }
+
+  .labelBox {
+    &:hover {
+      .checkBox {
+        border: 2px solid $primary;
+      }
+
+      .label {
+        color: $primary;
+      }
+    }
+  }
+
+  .checkBoxActive {
+    background-color: $primary;
+    border: 1px solid $primary;
+  }
+
+  .input {
+    &:focus {
+      & + .labelBox {
+        .checkBox {
+          border: 2px solid $primary;
+        }
+
+        .label {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .label {
+    text-transform: uppercase;
+  }
+}
+
+.required {
+  margin-left: $gap-xs;
+  color: $danger;
+}

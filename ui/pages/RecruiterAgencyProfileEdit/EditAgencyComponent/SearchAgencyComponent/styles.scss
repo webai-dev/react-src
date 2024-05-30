@@ -1,0 +1,57 @@
+
+body {
+  .contentBox {
+    margin-bottom: $ver-md;
+  }
+
+  .content {
+    align-self: stretch;
+  }
+
+  .freeLancer {
+    display: flex;
+    margin: $ver-sm 0;
+  }
+
+  .agency {
+    display: flex;
+    justify-content: space-between;
+    margin: $ver-sm 0;
+  }
+
+  .noSearchError {
+    margin-top: 10px;
+  }
+
+  .error {
+    color: $danger;
+  }
+
+  .button {
+    align-self: center;
+    margin: 0 $gap-sm;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .title {
+    @include modalInnerAppTitle;
+  }
+
+  .buttonBox {
+    display: flex;
+    justify-content: center;
+    margin-top: $ver-md;
+  }
+
+  .confirmModal {
+    @include modalInnerApp;
+    text-align: center;
+  }
+}

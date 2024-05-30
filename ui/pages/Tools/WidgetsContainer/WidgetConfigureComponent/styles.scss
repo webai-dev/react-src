@@ -1,0 +1,110 @@
+$breakPoint: 1250px;
+body {
+  .box {
+    @include colBox;
+    flex-wrap: wrap;
+    @include mobile($breakPoint) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .col {
+    width: calc(50% - #{$gap-md});
+    flex: 1 0 auto;
+    @include mobile($breakPoint) {
+      width: 100%;
+      margin-bottom: $ver-md;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @include desktop($breakPoint) {
+      &:first-child {
+        margin-right: 15px;
+      }
+      &:last-child {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .customizeBox {
+    display: flex;
+
+  }
+}
+
+.customize {
+  flex: 1 1 auto;
+  @include mobile($breakPoint) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.marginTop {
+  margin-top: $ver-md;
+}
+
+.switchBox {
+  display: flex;
+}
+
+.switchButton {
+  margin: 0;
+
+  &:first-child {
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+  }
+}
+
+.buttonsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  @include mobile($breakPoint) {
+    justify-content: flex-start;
+  }
+}
+
+.button {
+  margin: $ver-xs $gap-md $ver-xs 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.widget {
+  max-width: 445px;
+  overflow: hidden;
+}
+
+$scale: 0.6;
+:export {
+  scale: $scale,
+}
+.widgetDouble {
+  max-width: 800px;
+  width: 100%/$scale;
+  @include desktop($breakPoint) {
+    transform: scale($scale);
+    transform-origin: 0 0;
+  }
+}
+.scaleSpan {
+  font-size: 18px;
+  color: $gray-600;
+  @include mobile($breakPoint) {
+    display: none;
+  }
+}

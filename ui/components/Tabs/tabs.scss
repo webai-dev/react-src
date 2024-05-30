@@ -1,0 +1,43 @@
+@import "variables";
+:global {
+  .sourcr-tabs {
+    background: $white;
+    border: 0;
+    .sourcr-tabs--tab {
+      width: auto;
+      border: 0;
+      a {
+        margin-right: 0;
+        padding: 17px 14px 15px;
+        font-size: 16px;
+        text-transform: uppercase;
+        border: 0;
+        border-bottom: 3px solid $white;
+        border-radius: 0;
+        span {
+          position: relative;
+          top: -1px;
+          padding: 3px 7px;
+          color: #fff;
+          font-size: 12px;
+          font-weight: 400;
+          background-color: $pink;
+          border-radius: 50px;
+        }
+        &:hover {
+          background: $white;
+        }
+      }
+      &.sourcr-tabs--tab__active {
+        a,
+        a:focus,
+        a:hover {
+          color: $black;
+          background: $white;
+          border: 0;
+          border-bottom: 3px solid $pink;
+        }
+      }
+    }
+  }
+}

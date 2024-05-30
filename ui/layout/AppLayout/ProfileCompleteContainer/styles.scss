@@ -1,0 +1,27 @@
+.alert {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+  color: $white;
+  background-color: $primary;
+  border-radius: 0.25rem;
+}
+
+.alertAvatar {
+  width: 60px;
+  height: 60px;
+  margin-right: $gap-xs;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.alertMessage {
+  padding: 0.75rem 0;
+}
+.warning {
+  &:first-child {
+    margin-top: 0;
+  }
+}

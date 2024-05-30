@@ -1,0 +1,38 @@
+@import "variables";
+:global {
+  span.job-application-status {
+    padding: 5px 10px;
+    color: #575f65;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-transform: uppercase;
+    &.job-application-status__submitted {
+      .fa-circle {
+        color: $yellow;
+      }
+    }
+    &.job-application-status__interviewing {
+      .fa-circle {
+        color: $orange;
+      }
+    }
+    &.job-application-status__offered {
+      .fa-circle {
+        color: $green;
+      }
+    }
+    &.job-application-status__placed {
+      .fa-circle {
+        color: $green;
+      }
+    }
+    &.job-application-status__rejected,
+    &.job-application-status__withdrawn {
+      .fa-circle {
+        color: $red;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "variables";
+:global {
+  span.recruiter-application-status {
+    padding: 5px 10px;
+    color: #575f65;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-transform: uppercase;
+    &.recruiter-application-status__engaged {
+      .fa-circle {
+        color: $green;
+      }
+    }
+    &.recruiter-application-status__open,
+    &.recruiter-application-status__pending {
+      .fa-circle {
+        color: $yellow;
+      }
+    }
+    &.recruiter-application-status__rejected {
+      .fa-circle {
+        color: red;
+      }
+    }
+    &.recruiter-application-status__withdrawn {
+      .fa-circle {
+        color: $blue;
+      }
+    }
+  }
+}

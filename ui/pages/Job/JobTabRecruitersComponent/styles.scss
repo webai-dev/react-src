@@ -1,0 +1,50 @@
+:global {
+  .engaged-recruiter--table--table {
+    width: 100%;
+  }
+
+  .engaged-recruiter--table {
+    width: 100%;
+
+    .no-items-row {
+      span {
+        display: block;
+        color: #666666;
+        text-align: center;
+      }
+    }
+
+    .recruiter-table--row {
+      .recruiter-table--cell--recruiter {
+        white-space: 100%;
+
+        a {
+          cursor: pointer;
+        }
+      }
+
+      .recruiter-table--cell--candidate-count {
+      }
+
+      .recruiter-table--cell--status {
+      }
+
+      .recruiter-table--cell--actions {
+      }
+    }
+  }
+}
+
+body {
+  .dropDownLabel {
+    @include dropDownButtonLabel
+  }
+
+  .dropDownSelect {
+    @include dropDownSelect
+  }
+
+  .item {
+    @include dropDownItem;
+  }
+}

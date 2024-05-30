@@ -1,0 +1,7 @@
+.label {
+  @include Montserrat;
+  margin-top: 10px;
+  margin-left: 15px;
+  color: $gray-500;
+  display: block;
+}

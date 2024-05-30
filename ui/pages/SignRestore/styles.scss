@@ -1,0 +1,17 @@
+body {
+  .box {
+    padding: 20px 50px;
+    text-align: center;
+    background-color: $white;
+  }
+
+  .borderButton {
+    margin-top: $ver-sm;
+    border: 1px solid $accent;
+  }
+
+  .button {
+    @include Abel;
+    width: 100%;
+  }
+}

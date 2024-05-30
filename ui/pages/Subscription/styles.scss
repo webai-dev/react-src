@@ -1,0 +1,95 @@
+body {
+  .box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .infoBox,
+  .subscriptionBox {
+    background-color: $white;
+    padding: 40px;
+    display: flex;
+  }
+
+  .subscriptionBox {
+    width: calc(50% - #{$gap-md});
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .infoBox {
+    justify-content: space-between;
+    margin-bottom: $ver-md;
+    flex-wrap: wrap;
+
+    .infoBlock {
+      margin-bottom: $gap-lg;
+    }
+  }
+
+  .titleInfo {
+    width: 100%;
+    margin-bottom: $ver-md;
+  }
+
+  .infoBlock {
+    width: calc(50% - 15px);
+    align-items: flex-end;
+  }
+
+  .subscriptionIcon {
+    width: 93px;
+    height: 93px;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: $gap-lg;
+  }
+
+  .titlePrice {
+    color: $accent;
+    font-size: 26px;
+    margin-top: 7px;
+  }
+
+  .additional {
+    color: $gray-600;
+    text-align: center;
+  }
+
+  .subscriptionIcon,
+  .additional,
+  .button,
+  .feature {
+    margin-bottom: $ver-md;
+  }
+
+  .free {
+    font-weight: 700;
+  }
+
+  .feature {
+    svg {
+      width: 13px;
+      height: 13px;
+      color: $success;
+      margin-right: $gap-xs;
+      transform: translateY(1px);
+    }
+  }
+
+  .buttonBox {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cancel {
+    transform: translateY(2px);
+  }
+}

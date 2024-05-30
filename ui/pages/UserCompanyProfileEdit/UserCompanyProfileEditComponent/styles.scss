@@ -1,0 +1,54 @@
+:export {
+  cropperBorder: 30;
+  avatarWidth: 165;
+}
+body {
+  .form {
+    @include form;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dropZone {
+    align-self: center;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    @include inputMargin;
+    @include mobile {
+      width: 135px;
+      height: 135px;
+    }
+    @include desktop {
+      width: 180px;
+      height: 180px;
+    }
+  }
+
+  .row {
+    display: flex;
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  .input {
+    @include desktop {
+      margin-right: $gap-md;
+      margin-left: $gap-md;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .submit {
+    align-self: center;
+    margin-top: $ver-md;
+  }
+}

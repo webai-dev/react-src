@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% if (htmlWebpackPlugin.options.isProduction) { %>
+    <!-- Google Tag Manager -->
+    <script>window.dataLayer = window.dataLayer || [];</script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[ l ] = w[ l ] || [];
+            w[ l ].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[ 0 ],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KG9SDRQ');
+    </script>
+    <script>
+        !function () {
+            var analytics = window.analytics = window.analytics || [];
+            if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error('Segment snippet included twice.'); else {
+                analytics.invoked = !0;
+                analytics.methods = [ 'trackSubmit', 'trackClick', 'trackLink', 'trackForm', 'pageview', 'identify', 'reset', 'group', 'track', 'ready', 'alias', 'debug', 'page', 'once', 'off', 'on' ];
+                analytics.factory = function (t) {
+                    return function () {
+                        var e = Array.prototype.slice.call(arguments);
+                        e.unshift(t);
+                        analytics.push(e);
+                        return analytics;
+                    };
+                };
+                for (var t = 0; t < analytics.methods.length; t++) {
+                    var e = analytics.methods[ t ];
+                    analytics[ e ] = analytics.factory(e);
+                }
+                analytics.load = function (t, e) {
+                    var n = document.createElement('script');
+                    n.type = 'text/javascript';
+                    n.async = !0;
+                    n.src = 'https://cdn.segment.com/analytics.js/v1/' + t + '/analytics.min.js';
+                    var a = document.getElementsByTagName('script')[ 0 ];
+                    a.parentNode.insertBefore(n, a);
+                    analytics._loadOptions = e;
+                };
+                analytics.SNIPPET_VERSION = '4.1.0';
+                analytics.load('WXnbrvNeSCkQVSl1Adn16jGSTlcxUzVg');
+                analytics.page();
+            }
+        }();
+    </script>
+    <!-- End Google Tag Manager -->
+    <% } %>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Abel:300,400,700|Open+Sans:300,400,600|Montserrat:300,400,500" rel="stylesheet">
+    <title>Sourcr | Search Recruiter Reviews and Recommendations</title>
+</head>
+<body>
+<div id="modal"></div>
+<div id="app"></div>
+<div
+        id="noSupport"
+        style="display:none; font-family: sans-serif; text-align: center"
+>
+    <h2 style="margin-bottom: 60px;">You're using a web browser that isn't supported by Sourcr. We support the following browsers on desktop and mobile:</h2>
+    <div>
+        <a
+                href="https://www.google.com/intl/com/chrome/"
+                style="display:inline-block; margin: 0 10px;"
+        >
+            <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1200px-Google_Chrome_icon_%28September_2014%29.svg.png"
+                    alt="Google browser"
+                    width="150"
+                    height="150"
+            >
+            <div style="margin-top: 10px">
+                Google
+            </div>
+        </a>
+        <a
+                href="https://www.mozilla.org/en-US/firefox/new/"
+                style="display:inline-block; margin: 0 10px;"
+        >
+            <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Firefox_logo%2C_2019.svg/1200px-Firefox_logo%2C_2019.svg.png"
+                    alt="Firefox browser"
+                    width="150"
+                    height="150"
+            >
+            <div style="margin-top: 10px">
+                Firefox
+            </div>
+        </a>
+    </div>
+    <script defer>
+        if (
+            navigator.appVersion.toUpperCase()
+                .indexOf('MSIE') !== -1 ||
+            navigator.appVersion.toUpperCase()
+                .indexOf('TRIDENT') !== -1 ||
+            navigator.appVersion.toUpperCase()
+                .indexOf('EDGE') !== -1
+        ) {
+            document.getElementById('noSupport').style[ 'display' ] = 'block';
+        }
+    </script>
+</div>
+</body>
+</html>
